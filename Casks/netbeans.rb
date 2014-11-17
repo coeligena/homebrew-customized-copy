@@ -105,7 +105,8 @@ cask :v1 => 'netbeans' do
 </plist>}
       end
   end
-  pkg "NetBeans #{version}.mpkg"
+  pkg "NetBeans #{version}.mpkg", :apply_choice_changes_xml => '/tmp/netbeans-choices.xml'
+
   # Theoretically this uninstall could conflict with a separate GlassFish
   # installation.
   #
