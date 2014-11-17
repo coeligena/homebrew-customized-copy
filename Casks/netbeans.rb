@@ -106,7 +106,14 @@ class Netbeans < Cask
       end
   end
   pkg "NetBeans #{version}.mpkg", :apply_choice_changes_xml => '/tmp/netbeans-choices.xml'
-
+  postflight do
+    Dir.glob("/Applications/Netbeans/*").sort.each do |f|
+      filename = File.basename(f, File.extname(f))
+      File.rename(f, "/Applications/Netbeans" + File.extname(f))
+    end
+    Dir.delete("/Applications/Netbeans/")
+  end
+  
   # Theoretically this uninstall could conflict with a separate GlassFish
   # installation.
   #
