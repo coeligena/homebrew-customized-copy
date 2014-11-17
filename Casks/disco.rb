@@ -6,7 +6,7 @@ class Disco < Cask
     homepage 'http://www.discoapp.com'
     license :gratis
     
-    caveats "Enter free serial: DSCO-111-113-199-99"
+    caveats "Enter free name: FREE DISCO and serial: DSCO-111-113-199-99"
     
     app 'Disco.app'
 end
