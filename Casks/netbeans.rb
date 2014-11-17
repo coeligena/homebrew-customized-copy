@@ -1,4 +1,4 @@
-cask :v1 => 'netbeans' do
+class Netbeans < Cask
   version '8.0.1'
   sha256 '701f057b9cb9d4f20054acbbe5298369c459827e86021de6a80738a1fc600f1f'
 
