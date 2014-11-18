@@ -5,6 +5,8 @@ cask :v1 => 'keystore-explorer' do
   url "https://downloads.sourceforge.net/project/keystore-explorer/KSE%20#{version}/kse-501.dmg?r=&ts=1393234297&use_mirror=heanet"
   homepage 'http://keystore-explorer.sourceforge.net/index.php'
   license :oss
+  
+  caveats "Install unlimited encryption Java files at http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html"
 
   app "KeyStore Explorer #{version}.app"
 end
