@@ -9,5 +9,7 @@ cask :v1 => 'kismac2' do
   preflight do
     system '/bin/mv', '--', '/Library/Caches/Homebrew/kismac2-latest.php', '/Library/Caches/Homebrew/kismac2-latest.zip'
   end
+  container :nested => 'KisMac2.dmg'
+
   app 'KisMac2.app'
 end
