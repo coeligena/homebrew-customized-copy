@@ -9,5 +9,6 @@ cask :v1 => 'igadget-manager' do
   preflight do
     system '/bin/mv', '--', staged_path.join('igadget-manager-latest.php'), destination_path.join('igadget-manager-latest.zip')
   end
+
   app 'iGadget Manager.app'
 end
