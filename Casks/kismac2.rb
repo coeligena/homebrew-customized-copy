@@ -7,7 +7,7 @@ cask :v1 => 'kismac2' do
   license :oss
 
   preflight do
-    system '/bin/mv', '--', 'kismac2-latest.php', 'kismac2-latest.zip'
+    system '/bin/mv', '--', '/Library/Caches/Homebrew/kismac2-latest.php', '/Library/Caches/Homebrew/kismac2-latest.zip'
   end
   app 'KisMac2.app'
 end
