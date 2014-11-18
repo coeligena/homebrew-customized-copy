@@ -6,5 +6,8 @@ cask :v1 => 'kismac2' do
   homepage 'http://www.igrsoft.com/en/kismac2/'
   license :oss
 
+  preflight do
+    system '/bin/mv', '--', staged_path.join('kismac2-latest.php'), destination_path.join('kismac2-latest.zip')
+  end
   app 'KisMac2.app'
 end
