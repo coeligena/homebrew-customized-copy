@@ -7,7 +7,7 @@ cask :v1 => 'kismac2' do
   license :oss
 
   preflight do
-    system '/bin/mv', '--', staged_path.join('kismac2-latest.php'), destination_path.join('kismac2-latest.zip')
+    system '/bin/mv', '--', 'kismac2-latest.php', 'kismac2-latest.zip'
   end
   app 'KisMac2.app'
 end
