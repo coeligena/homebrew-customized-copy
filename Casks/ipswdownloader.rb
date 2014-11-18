@@ -6,5 +6,10 @@ cask :v1 => 'ipswdownloader' do
   homepage 'http://www.igrsoft.com/en/ipswdownloader/'
   license :oss
 
+  preflight do
+    system '/bin/mv', '--', '/Library/Caches/Homebrew/ipswdownloader-latest.php', '/Library/Caches/Homebrew/ipswdownloader-latest.zip'
+  end
+  container :nested => 'ipswDownloader.dmg'
+
   app 'ipswDownloader.app'
 end
