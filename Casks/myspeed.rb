@@ -22,7 +22,7 @@ class Myspeed < Cask
             ]
   zap :delete => [
           '~/Library/Application Support/Enounce',
-          '~/Library/Caches/com.enounce.MySpeed'
+          '~/Library/Caches/com.enounce.MySpeed',
           '~/Library/Preferences/com.enounce.MySpeed.plist'
       ],
       :rmdir   => [
