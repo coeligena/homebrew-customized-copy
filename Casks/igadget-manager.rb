@@ -6,9 +6,5 @@ cask :v1 => 'igadget-manager' do
   homepage 'http://www.igrsoft.com/en/igadget-manager/'
   license :gratis
 
-  preflight do
-    system '/bin/mv', '--', staged_path.join('igadget-manager-latest.php'), destination_path.join('igadget-manager-latest.zip')
-  end
-
   app 'iGadget Manager.app'
 end
