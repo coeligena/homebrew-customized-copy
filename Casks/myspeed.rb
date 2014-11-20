@@ -1,4 +1,4 @@
-class Myspeed < Cask
+cask :v1 => 'myspeed' do
   #    version '1153' # 1.43
   #    sha256 '22a77eaf5fec64e3055bc68f5287b9d2d94a0c34abc83e5948d0ff591c8cf7f5'
   version '6311' # 6 Beta

@@ -1,4 +1,4 @@
-class Cookie < Cask
+cask :v1 => 'cookie' do
   version :latest
   sha256 :no_check
   

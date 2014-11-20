@@ -1,4 +1,4 @@
-class Disco < Cask
+cask :v1 => 'disco' do
     version '1.0.3'
     sha256 '65696860a0eee71ac689c95817d028f084695b30805bf4880d5aa16e9de46a62'
     

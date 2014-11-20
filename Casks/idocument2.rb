@@ -1,4 +1,4 @@
-class Idocument2 < Cask
+cask :v1 => 'idocument2' do
   version :latest
   sha256 :no_check
 

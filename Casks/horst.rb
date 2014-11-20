@@ -1,4 +1,4 @@
-class Horst < Cask
+cask :v1 => 'horst' do
   version :latest
   sha256 :no_check
 

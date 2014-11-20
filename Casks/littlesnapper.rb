@@ -1,4 +1,4 @@
-class Littlesnapper < Cask
+cask :v1 => 'littlesnapper' do
   version :latest
   sha256 :no_check
   

@@ -1,4 +1,4 @@
-class Grappler < Cask
+cask :v1 => 'grappler' do
   version :latest
   sha256 :no_check
 
