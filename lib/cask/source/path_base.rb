@@ -44,8 +44,18 @@ class Cask::Source::PathBase
 
       # munge text
       cask_string.sub!(%r{\A(\s*\#[^\n]*\n)+}, '');
-      if %r{\A\s*cask\s+:v[\d_]+\s+=>\s+([\'\"])(\S+?)\1(?:\s*,\s*|\s+)do\s*\n}.match(cask_string)
-        cask_string.sub!(%r{\A[^\n]+\n}, "class #{cask_class_name} < Cask\n")
+      if %r{\A\s*cask\s+:v([\d_]+)(test)?\s+=>\s+([\'\"])(\S+?)\3(?:\s*,\s*|\s+)do\s*\n}.match(cask_string)
+        dsl_version = $1
+        test_cask = ! $2.nil?
+        header_name = $4
+        superclass_name = test_cask ? 'TestCask' : 'Cask'
+        cask_string.sub!(%r{\A[^\n]+\n}, "class #{cask_class_name} < #{superclass_name}\n")
+        # todo enforce valid DSL version
+        if header_name != cask_name
+          raise CaskInvalidError.new(cask_name, "Bad header line: '#{header_name}' does not match file name")
+        end
+      else
+        raise CaskInvalidError.new(cask_name, "Bad header line: parse failed")
       end
 
       # simulate "require"
@@ -69,8 +79,12 @@ class Cask::Source::PathBase
     end
   end
 
+  def cask_name
+    path.basename.to_s.sub(/\.rb/, '')
+  end
+
   def cask_class_name
-    path.basename.to_s.sub(/\.rb/, '').split('-').map(&:capitalize).join
+    cask_name.split('-').map(&:capitalize).join
   end
 
   def to_s

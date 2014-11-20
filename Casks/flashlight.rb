@@ -1,6 +1,6 @@
 cask :v1 => 'flashlight' do
-  version 'v0.5-alpha'
-  sha256 '2d9c8b23a4554dea1baf39e215022969871054f252f8fb9b358f1489e63ce146'
+  version 'v0.71-alpha'
+  sha256 '63c0258267c67e7213afb565882a222788856cbd9e6105bbe966b30ef9722bae'
 
   url "https://github.com/nate-parrott/Flashlight/releases/download/#{version}/Flashlight.zip"
   homepage 'http://flashlight.nateparrott.com/'

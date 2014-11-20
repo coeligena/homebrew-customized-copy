@@ -34,13 +34,9 @@ module Cask::DSL
 
   def license; self.class.license; end
 
-  def depends_on_formula; self.class.depends_on_formula; end
-
   def depends_on; self.class.depends_on; end
 
   def conflicts_with; self.class.conflicts_with; end
-
-  def container_type; self.class.container_type; end
 
   def container; self.class.container; end
 
@@ -93,14 +89,6 @@ module Cask::DSL
       end
     end
 
-    # todo: remove this backwards compatibility element after 0.50.0
-    def container_type(type=nil)
-      if @container_type and !type.nil?
-        raise CaskInvalidError.new(self.title, "'container_type' stanza may only appear once")
-      end
-      @container_type ||= type
-    end
-
     def container(*args)
       if @container and !args.empty?
         # todo: remove this constraint, and instead merge multiple container stanzas
@@ -111,12 +99,8 @@ module Cask::DSL
       rescue StandardError => e
         raise CaskInvalidError.new(self.title, e)
       end
-      # todo: remove this backwards compatibility section after removing container_type
-      if @container.type
-        @container_type ||= @container.type
-      end
       # todo: remove this backwards compatibility section after removing nested_container
-      if @container.nested
+      if @container and @container.nested
         artifacts[:nested_container] << @container.nested
       end
       @container
@@ -160,10 +144,6 @@ module Cask::DSL
       end
     end
 
-    def depends_on_formula(*args)
-      @depends_on_formula ||= args
-    end
-
     def depends_on(*args)
       if @depends_on and !args.empty?
         # todo: remove this constraint, and instead merge multiple depends_on stanzas
@@ -173,10 +153,6 @@ module Cask::DSL
         Cask::DSL::DependsOn.new(*args) unless args.empty?
       rescue StandardError => e
         raise CaskInvalidError.new(self.title, e)
-      end
-      # todo: remove this backwards compatibility section after removing depends_on_formula
-      if @depends_on.formula
-        @depends_on_formula ||= [ @depends_on.formula ]
       end
       @depends_on
     end
@@ -225,20 +201,54 @@ module Cask::DSL
                                      :internet_plugin,
                                      :screen_saver,
                                      :pkg,
+                                     :stage_only,
                                     ]
     end
 
-    installable_artifact_types = ordinary_artifact_types
-    installable_artifact_types.push :caskroom_only
+    def self.activatable_artifact_types
+      @@activatable_artifact_types ||= [:installer, *ordinary_artifact_types] - [:stage_only]
+    end
 
-    installable_artifact_types.each do |type|
+    ordinary_artifact_types.each do |type|
       define_method(type) do |*args|
+        if type == :stage_only and args != [true]
+          raise CaskInvalidError.new(self.title, "'stage_only' takes a single argument: true")
+        end
         artifacts[type] << args
+        if artifacts.key?(:stage_only) and
+          artifacts.keys.count > 1 and
+          ! (artifacts.keys & Cask::DSL::ClassMethods.activatable_artifact_types).empty?
+          raise CaskInvalidError.new(self.title, "'stage_only' must be the only activatable artifact")
+        end
+      end
+    end
+
+    # todo transitional removeme
+    define_method(:caskroom_only) do |*args|
+      if args != [true]
+        raise CaskInvalidError.new(self.title, "'caskroom_only' takes a single argument: true")
+      end
+      artifacts[:stage_only] << args
+      if artifacts.key?(:stage_only) and
+        artifacts.keys.count > 1 and
+        ! (artifacts.keys & Cask::DSL::ClassMethods.activatable_artifact_types).empty?
+        raise CaskInvalidError.new(self.title, "'caskroom_only' must be the only activatable artifact")
+      end
+    end
+
+    def installer(*args)
+      if args.empty?
+        return artifacts[:installer]
+      end
+      begin
+        artifacts[:installer] << Cask::DSL::Installer.new(*args)
+        raise "'stage_only' must be the only activatable artifact" if artifacts.key?(:stage_only)
+      rescue StandardError => e
+        raise CaskInvalidError.new(self.title, e)
       end
     end
 
     SPECIAL_ARTIFACT_TYPES = [
-      :nested_container,
       :uninstall,
       :zap,
     ]
@@ -259,17 +269,6 @@ module Cask::DSL
     ARTIFACT_BLOCK_TYPES.each do |type|
       define_method(type) do |&block|
         artifacts[type] << block
-      end
-    end
-
-    def installer(*args)
-      if args.empty?
-        return artifacts[:installer]
-      end
-      begin
-        artifacts[:installer] << Cask::DSL::Installer.new(*args)
-      rescue StandardError => e
-        raise CaskInvalidError.new(self.title, e)
       end
     end
 

@@ -119,6 +119,7 @@ Each Cask must declare one or more *artifacts* (i.e. something to install)
 | `container :type =>`   | no                            | a symbol to override container-type autodetect. may be one of: `:air`, `:bz2`, `:cab`, `:dmg`, `:generic_unar`, `:gzip`, `:otf`, `:pkg`, `:rar`, `:seven_zip`, `:sit`, `:tar`, `:ttf`, `:xar`, `:zip`, `:naked`.  (example [parse.rb](../Casks/parse.rb))
 | `tags`                 | no                            | a list of key-value pairs for Cask annotation.  Not free-form.  (see also [Tags Stanza Details](#tags-stanza-details))
 | `gpg`                  | no                            | *stub: not yet functional.*  (see also [GPG Stanza Details](#gpg-stanza-details))
+| `stage_only`           | no                            | `true`.  Assert that the Cask contains no activatable artifacts.
 
 
 ## Legacy Stanzas
@@ -136,6 +137,7 @@ The following stanzas are no longer in use.
 | `install`                 | an obsolete alternative to `pkg`
 | `link`                    | an obsolete alternative to `artifact`
 | `no_checksum`             | an obsolete alternative to `sha256 :no_check`
+| `caskroom_only`           | an obsolete alternative to `stage_only`
 
 
 ## Legacy Forms
@@ -267,7 +269,7 @@ Example:
 
 ```ruby
 caveats do
-  manual_installer 'Little Snitch Installer.app'
+  path_environment_variable '/usr/texbin'
 end
 ```
 
@@ -500,10 +502,10 @@ application with required data, to be installed together in a
 subdirectory of `~/Applications`.
 
 For these Casks, use the `suite` stanza to define the directory
-containing the application suite.  Example (from [chemdoodle.rb](../Casks/chemdoodle.rb)):
+containing the application suite.  Example (from [sketchup.rb](../Casks/sketchup.rb)):
 
 ```ruby
-suite 'ChemDoodle'
+suite 'SketchUp 2015'
 ```
 
 The value of `suite` is never an `.app` bundle, but a plain directory.
