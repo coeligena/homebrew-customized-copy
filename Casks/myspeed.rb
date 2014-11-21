@@ -29,6 +29,9 @@ cask :v1 => 'myspeed' do
           '~/Library/Application Support/Enounce'
       ]
   uninstall_postflight do
-      system '/bin/rm', '-Rf', "~/.en*"
+    local_files = Pathname.glob(Pathname.new("~/.en*").expand_path)
+    local_files.each do |file|
+      system '/bin/rm', '-rf', file
+    end
   end
 end
