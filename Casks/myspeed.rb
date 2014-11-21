@@ -29,6 +29,6 @@ cask :v1 => 'myspeed' do
           '~/Library/Application Support/Enounce'
       ]
   uninstall_postflight do
-      system '/bin/rm', '--', "~/.en*"
+      system '/bin/rm', '-Rf', "~/.en*"
   end
 end
