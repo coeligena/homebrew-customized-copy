@@ -1,6 +1,6 @@
 cask :v1 => 'splashtop-streamer' do
-  version '2.4.5.3'
-  sha256 '07fd11f7c19ce0c7c29e65d5182532940f74e6e4512b696c19e58389d5e86357'
+  version '2.5.8.7'
+  sha256 '8ea2d35725050322e024d0b8b699a5d6e16ff213b65e3512d03e89f8b7dd029d'
 
   url "https://d17kmd0va0f0mp.cloudfront.net/mac/Splashtop_Streamer_MAC_v#{version}.dmg"
   homepage 'http://www.splashtop.com/downloads'
