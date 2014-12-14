@@ -4,8 +4,9 @@ cask :v1 => 'mailplane' do
 
   url 'http://update.mailplaneapp.com/mailplane_3.php'
   homepage 'http://mailplaneapp.com'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   app 'Mailplane 3.app'
+
   zap :delete => '~/Library/Preferences/com.mailplaneapp.Mailplane.plist'
 end

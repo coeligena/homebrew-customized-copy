@@ -14,8 +14,8 @@ module Cask::DownloadStrategy
     @command  = command
     @cask_url = cask.url
     super(
-      cask.title,
-      ::Resource.new(cask.title) do |r|
+      cask.token,
+      ::Resource.new(cask.token) do |r|
         r.url     cask.url.to_s
         r.version cask.version.to_s
       end
@@ -30,6 +30,11 @@ class Cask::CurlDownloadStrategy < CurlDownloadStrategy
   def _fetch
     odebug "Calling curl with args #{curl_args.utf8_inspect}"
     curl(*curl_args)
+  end
+
+  def fetch
+    super
+    tarball_path
   end
 
   private

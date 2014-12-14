@@ -6,8 +6,9 @@ cask :v1 => 'feeds' do
   appcast 'https://feedswww.appspot.com/appcast.xml',
           :sha256 => 'cb54169bafd37e7d482ef39ed2f8ee555c35009c36922a03914d87d1e751a2da'
   homepage 'http://www.feedsapp.com/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   app 'Feeds.app'
+
   zap :delete => '~/Library/Preferences/com.feedsapp.Feeds.plist'
 end

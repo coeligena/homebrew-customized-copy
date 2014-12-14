@@ -4,9 +4,10 @@ cask :v1 => 'klayout' do
 
   url "http://178.77.72.242/downloads/klayout.#{version}.pkg"
   homepage 'http://www.klayout.de/index.html'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "klayout.#{version}.pkg"
+
   uninstall :pkgutil => 'klayout.de',
             :quit => 'klayout.de'
 end

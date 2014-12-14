@@ -1,9 +1,13 @@
+# encoding: UTF-8
 
 # see Homebrew Library/Homebrew/utils.rb
 
 require 'yaml'
 require 'open3'
 require 'stringio'
+
+UPDATE_CMD = "brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup"
+ISSUES_URL = "https://github.com/caskroom/homebrew-cask/issues"
 
 # monkeypatch Object - not a great idea
 class Object
@@ -19,6 +23,13 @@ class Object
         self.inspect.force_encoding('UTF-8').sub(%r{\A"(.*)"\Z}, '\1')
       end
     end
+  end
+end
+
+# monkeypatch MacOS
+module MacOS
+  def release
+    version
   end
 end
 
@@ -85,6 +96,7 @@ module Cask::Utils
       odebug "Cask instance dumps in YAML:"
       odebug "Cask instance toplevel:", self.to_yaml
       [
+       :full_name,
        :homepage,
        :url,
        :appcast,
@@ -98,8 +110,11 @@ module Cask::Utils
        :conflicts_with,
        :container,
        :gpg,
+       :accessibility_access,
       ].each do |method|
-        odebug "Cask instance method '#{method}':", self.send(method).to_yaml
+        printable_method = method.to_s
+        printable_method = "name" if printable_method == "full_name"
+        odebug "Cask instance method '#{printable_method}':", self.send(method).to_yaml
       end
     end
   end
@@ -148,5 +163,29 @@ module Cask::Utils
       file = file.parent
     end
     return false
+  end
+
+  def self.error_message_with_suggestions
+    <<-EOS.undent
+    #{ Tty.reset }
+      #{ Tty.white }Most likely, this means you have #{
+      }an outdated version of homebrew-cask. Please run:
+
+          #{ Tty.reset }#{ Tty.green }#{ UPDATE_CMD }#{ Tty.reset }
+
+      #{ Tty.white }If this doesn’t fix the problem, please report this bug:
+
+          #{ Tty.em }#{ Tty.white }#{ ISSUES_URL }#{ Tty.reset }
+
+    EOS
+  end
+
+  def self.method_missing_message(method, token, section=nil)
+    poo = []
+    poo << "Unexpected method '#{method}' called"
+    poo << "during #{section}" if section
+    poo << "on Cask #{token}."
+
+    opoo(poo.join(' ') + "\n" + error_message_with_suggestions)
   end
 end

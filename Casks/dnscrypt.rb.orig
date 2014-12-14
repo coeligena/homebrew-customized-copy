@@ -1,0 +1,35 @@
+cask :v1 => 'dnscrypt' do
+  version '1.0.4'
+<<<<<<< HEAD
+  sha256 :no_check
+  
+=======
+  sha256 '14e08b4e4bba7e7a0761e318eca559a980e95dc46fafd7251011785f0cf10993'
+
+>>>>>>> caskroom/homebrew-cask/master
+  url "https://github.com/alterstep/dnscrypt-osxclient/releases/download/#{version}/dnscrypt-osxclient-#{version}.dmg"
+  homepage 'https://opendns.github.io/dnscrypt-osx-client/'
+  license :oss
+  
+  pkg 'DNSCrypt.mpkg'
+<<<<<<< HEAD
+  uninstall :quit => 'com.github.dnscrypt-osxclient.DNSCrypt-Menubar',
+      :pkgutil    => 'com.github.dnscrypt-osxclient.dnscryptClient.*',
+      :launchctl  => [
+    'com.github.dnscrypt-osxclient.DNSCryptAfterboot',
+    'com.github.dnscrypt-osxclient.DNSCryptConsoleChange',
+    'com.github.dnscrypt-osxclient.DNSCryptControlChange',
+    'com.github.dnscrypt-osxclient.DNSCryptNetworkChange',
+  ]
+=======
+
+  uninstall :quit      => 'com.github.dnscrypt-osxclient.DNSCrypt-Menubar',
+            :pkgutil   => 'com.github.dnscrypt-osxclient.dnscryptClient.*',
+            :launchctl => [
+                           'com.github.dnscrypt-osxclient.DNSCryptAfterboot',
+                           'com.github.dnscrypt-osxclient.DNSCryptConsoleChange',
+                           'com.github.dnscrypt-osxclient.DNSCryptControlChange',
+                           'com.github.dnscrypt-osxclient.DNSCryptNetworkChange',
+                          ]
+>>>>>>> caskroom/homebrew-cask/master
+end

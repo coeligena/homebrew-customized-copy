@@ -1,0 +1,19 @@
+cask :v1 => 'cookie' do
+  version :latest
+  sha256 :no_check
+<<<<<<< HEAD
+  
+  url 'https://sweetpproductions.com/products/cookie/Cookie.dmg'
+  appcast 'http://www.cookiestumbler.com/Software%20Updates/Cookie%20Stumbler.xml'
+  homepage 'http://cookieapp.com'
+  license :trial
+  
+=======
+
+  url 'http://sweetpproductions.com/products/cookie/Cookie.dmg'
+  homepage 'http://sweetpproductions.com/'
+  license :commercial
+
+>>>>>>> caskroom/homebrew-cask/master
+  app 'Cookie.app'
+end

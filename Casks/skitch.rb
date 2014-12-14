@@ -4,9 +4,10 @@ cask :v1 => 'skitch' do
 
   url "http://cdn1.evernote.com/skitch/mac/release/Skitch-#{version}.zip"
   homepage 'http://evernote.com/skitch/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   app 'Skitch.app'
+
   zap :delete => [
                   '~/Library/Preferences/com.plasq.skitch.plist',
                   '~/Library/Preferences/com.plasq.skitch.history',

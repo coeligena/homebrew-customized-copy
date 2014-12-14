@@ -4,9 +4,10 @@ cask :v1 => 'zendserver' do
 
   url "http://downloads.zend.com/zendserver/#{version}/ZendServer-#{version}-php-5.5.7.dmg"
   homepage 'http://www.zend.com/en/products/server/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'Zend Server.pkg'
+
   uninstall :script => { :executable => '/usr/local/zend/bin/uninstall.sh', :args => ['--automatic'] },
             :pkgutil => 'zenith.pkg.ZendServer'
   caveats do

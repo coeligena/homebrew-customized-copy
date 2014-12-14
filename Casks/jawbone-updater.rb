@@ -4,9 +4,10 @@ cask :v1 => 'jawbone-updater' do
 
   url "http://content.jawbone.com/store/dashboard/Jawbone_Updater-#{version}.pkg"
   homepage 'http://jawbone.com/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "Jawbone_Updater-#{version}.pkg"
+
   uninstall :quit => 'com.aliph.Jawbone_Updater',
             :pkgutil => 'com.Aliph.[Jj]awbone(|Updater.*).pkg'
 end

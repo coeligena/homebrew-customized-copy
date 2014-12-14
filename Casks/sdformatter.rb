@@ -4,8 +4,9 @@ cask :v1 => 'sdformatter' do
 
   url "https://www.sdcard.org/downloads/formatter_4/eula_mac/SDFormatter_#{version}0B.pkg"
   homepage 'https://www.sdcard.org'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "SDFormatter_#{version}0B.pkg"
+
   uninstall :pkgutil => 'jp.co.trendy.sdformatter.SDFormatter.pkg'
 end

@@ -1,3 +1,5 @@
+require 'rubygems'
+
 class Cask::Source::PathBase
 
   # derived classes must define method self.me?
@@ -20,7 +22,7 @@ class Cask::Source::PathBase
     raise CaskError.new "File '#{path}' is not a plain file" unless path.file?
     begin
 
-      # forward compatibility hack: convert first lines of the new form
+      # transitional hack: convert first lines of the new form
       #
       #     cask :v1 => 'google-chrome' do
       #
@@ -33,7 +35,7 @@ class Cask::Source::PathBase
       # todo: in the future, this can be pared down to an "eval"
 
       # read Cask
-      cask_string = File.open(path, 'rb') do |handle|
+      cask_contents = File.open(path, 'rb') do |handle|
         contents = handle.read
         if defined?(Encoding)
           contents.force_encoding('UTF-8')
@@ -43,26 +45,31 @@ class Cask::Source::PathBase
       end
 
       # munge text
-      cask_string.sub!(%r{\A(\s*\#[^\n]*\n)+}, '');
-      if %r{\A\s*cask\s+:v([\d_]+)(test)?\s+=>\s+([\'\"])(\S+?)\3(?:\s*,\s*|\s+)do\s*\n}.match(cask_string)
-        dsl_version = $1
-        test_cask = ! $2.nil?
-        header_name = $4
-        superclass_name = test_cask ? 'TestCask' : 'Cask'
-        cask_string.sub!(%r{\A[^\n]+\n}, "class #{cask_class_name} < #{superclass_name}\n")
-        # todo enforce valid DSL version
-        if header_name != cask_name
-          raise CaskInvalidError.new(cask_name, "Bad header line: '#{header_name}' does not match file name")
+      cask_contents.sub!(%r{\A(\s*\#[^\n]*\n)+}, '');
+      if %r{\A\s*cask\s+:v([\d_]+)(test)?\s+=>\s+([\'\"])(\S+?)\3(?:\s*,\s*|\s+)do\s*\n}.match(cask_contents)
+        dsl_version_string = $1
+        is_test = ! $2.nil?
+        header_token = $4
+        dsl_version = Gem::Version.new(dsl_version_string.gsub('_','.'))
+        superclass_name = is_test ? 'TestCask' : 'Cask'
+        cask_contents.sub!(%r{\A[^\n]+\n}, "class #{cask_class_name} < #{superclass_name}\n")
+        # todo the minimum DSL version should be defined globally elsewhere
+        minimum_dsl_version = Gem::Version.new('1.0')
+        unless dsl_version >= minimum_dsl_version
+          raise CaskInvalidError.new(cask_token, "Bad header line: 'v#{dsl_version_string}' is less than required minimum version '#{minimum_dsl_version}'")
+        end
+        if header_token != cask_token
+          raise CaskInvalidError.new(cask_token, "Bad header line: '#{header_token}' does not match file name")
         end
       else
-        raise CaskInvalidError.new(cask_name, "Bad header line: parse failed")
+        raise CaskInvalidError.new(cask_token, "Bad header line: parse failed")
       end
 
       # simulate "require"
       begin
         Object.const_get(cask_class_name)
       rescue NameError
-        eval(cask_string, TOPLEVEL_BINDING)
+        eval(cask_contents, TOPLEVEL_BINDING)
       end
 
     rescue CaskError, StandardError, ScriptError => e
@@ -71,7 +78,7 @@ class Cask::Source::PathBase
       raise e
     end
     begin
-      Object.const_get(cask_class_name).new
+      Object.const_get(cask_class_name).new(path)
     rescue CaskError, StandardError, ScriptError => e
       # bug: e.message.concat doesn't work with CaskError exceptions
       e.message.concat(" while instantiating '#{cask_class_name}' from '#{path}'")
@@ -79,12 +86,13 @@ class Cask::Source::PathBase
     end
   end
 
-  def cask_name
+  def cask_token
     path.basename.to_s.sub(/\.rb/, '')
   end
 
   def cask_class_name
-    cask_name.split('-').map(&:capitalize).join
+    # todo removeme: prepending KlassPrefix is transitional as we move away from representing Casks as classes
+    'KlassPrefix'.concat cask_token.split('-').map(&:capitalize).join
   end
 
   def to_s

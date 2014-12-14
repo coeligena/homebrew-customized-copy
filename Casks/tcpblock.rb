@@ -4,8 +4,9 @@ cask :v1 => 'tcpblock' do
 
   url "http://www.delantis.com/dist/TCPBlock_v#{version}.dmg"
   homepage 'http://tcpblock.wordpress.com/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "TCPBlock_v#{version}.pkg"
+
   uninstall :pkgutil => 'com.delantis.tcpblock.*'
 end

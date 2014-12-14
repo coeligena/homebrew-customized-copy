@@ -4,8 +4,9 @@ cask :v1 => 'astrill' do
 
   url 'http://download.astrill.com/astrill-setup-mac.dmg'
   homepage 'https://www.astrill.com'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'Astrill Setup.mpkg'
+
   uninstall :pkgutil => 'com.Astrill.app'
 end

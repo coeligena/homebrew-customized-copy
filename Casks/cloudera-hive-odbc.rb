@@ -4,9 +4,10 @@ cask :v1 => 'cloudera-hive-odbc' do
 
   url "https://downloads.cloudera.com/connectors/hive-#{version}.1006/MacOSX/ClouderaHiveODBC.dmg"
   homepage 'http://www.cloudera.com'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'ClouderaHiveODBC.pkg'
+
   uninstall :pkgutil => 'cloudera.hiveodbc'
   caveats <<-EOS.undent
     For configuration instructions, see

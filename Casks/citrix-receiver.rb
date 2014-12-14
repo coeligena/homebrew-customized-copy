@@ -4,9 +4,10 @@ cask :v1 => 'citrix-receiver' do
 
   url 'http://downloadplugins.citrix.com.edgesuite.net/Mac/CitrixReceiverWeb.dmg'
   homepage 'http://www.citrix.com/receiver'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'Install Citrix Receiver.pkg'
+
   uninstall :launchctl => [
                            'com.citrix.AuthManager_Mac',
                            'com.citrix.ReceiverHelper',

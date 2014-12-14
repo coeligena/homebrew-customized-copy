@@ -5,8 +5,9 @@ cask :v1 => 'riffworkst4' do
 
   url 'https://www.sonomawireworks.com/accountManagerUI/files/RiffWorksT4.dmg'
   homepage 'http://www.sonomawireworks.com/T4/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "RiffWorksT4V#{version.gsub('.','_')}.pkg"
+
   uninstall :pkgutil => 'com.sonomawireworks.riffworkst4'
 end

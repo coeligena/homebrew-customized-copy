@@ -4,8 +4,9 @@ cask :v1 => 'mercurymover' do
 
   url 'http://www.heliumfoot.com/files/release/mercurymover/MercuryMover.dmg'
   homepage 'http://www.heliumfoot.com/mercurymover'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   prefpane 'MercuryMover.prefPane'
+
   zap :delete => '~/Library/Preferences/com.heliumfoot.MyWiAgent.plist'
 end

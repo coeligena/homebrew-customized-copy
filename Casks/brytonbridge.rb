@@ -4,9 +4,10 @@ cask :v1 => 'brytonbridge' do
 
   url 'http://static.brytonsport.com/uploads/www/Software/version/14/BrytonBridge2.pkg'
   homepage 'http://www.brytonsport.com/help/start'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'BrytonBridge2.pkg'
+
   uninstall :pkgutil => 'com.brytonsport.pkg.BrytonBridge2',
             :quit    => 'com.yourcompany.BrytonBridge',
             :delete  => '/Applications/BrytonBridge2'

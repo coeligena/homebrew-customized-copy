@@ -4,9 +4,10 @@ cask :v1 => 'rekordbox' do
 
   url "http://rekordbox.com/_app/files/Install_rekordbox_#{version.gsub('.','_')}.pkg.zip"
   homepage 'http://rekordbox.com/en/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "Install_rekordbox_#{version.gsub('.','_')}.pkg"
+
   uninstall :pkgutil => 'com.pioneer.rekordbox.*',
             :delete  => '/Applications/rekordbox 3/'
 end

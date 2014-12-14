@@ -4,9 +4,10 @@ cask :v1 => 'nvalt' do
 
   url "http://abyss.designheresy.com/nvaltb/nvalt#{version}.zip"
   homepage 'http://brettterpstra.com/project/nvalt/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   app 'nvALT.app'
+
   zap :delete => [
                   '~/Library/Preferences/net.elasticthreads.nv.plist',
                   '~/Library/Application Support/Notational Velocity',

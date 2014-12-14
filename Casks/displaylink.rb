@@ -10,9 +10,10 @@ cask :v1 => 'displaylink' do
       },
       :using => :post
   homepage 'http://www.displaylink.com'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'DisplayLink Software Installer.pkg'
+
   uninstall :pkgutil => ['com.displaylink.displaylinkdriversigned',
                          'com.displaylink.displaylinkdriverunsigned']
             # :kext => ['com.displaylink.driver.DisplayLinkDriver',

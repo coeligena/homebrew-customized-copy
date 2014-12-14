@@ -4,8 +4,9 @@ cask :v1 => 'pgloader' do
 
   url "http://pgloader.io/files/pgloader-#{version}.pkg"
   homepage 'http://pgloader.io'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "pgloader-#{version}.pkg"
+
   uninstall :pkgutil => 'org.tapoueh.pgloader'
 end

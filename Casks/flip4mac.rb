@@ -4,8 +4,9 @@ cask :v1 => 'flip4mac' do
 
   url "http://dvd-mac.com/download/Flip4Mac_#{version}.dmg"
   homepage 'http://www.telestream.net/flip4mac/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'Flip4Mac.pkg'
+
   uninstall :pkgutil => 'net.telestream.Flip4Mac'
 end

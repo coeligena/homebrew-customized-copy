@@ -4,9 +4,10 @@ cask :v1 => 'camtwist' do
 
   url "http://camtwiststudio.com/release/CamTwist_#{version}.dmg"
   homepage 'http://camtwiststudio.com/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'CamTwist.pkg'
+
   uninstall :script => { :executable => 'Manual Install/CamTwist/uninstall.command' },
             :pkgutil => 'com.allocinit.camtwist.*'
 end

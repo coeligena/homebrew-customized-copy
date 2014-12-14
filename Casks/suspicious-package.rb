@@ -4,8 +4,9 @@ cask :v1 => 'suspicious-package' do
 
   url 'http://www.mothersruin.com/software/downloads/SuspiciousPackage.pkg'
   homepage 'http://www.mothersruin.com/software/SuspiciousPackage/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'SuspiciousPackage.pkg'
+
   uninstall :pkgutil => 'com.mothersruin.pkg.SuspiciousPackagePlugin'
 end

@@ -4,8 +4,9 @@ cask :v1 => 'nmap' do
 
   url "http://nmap.org/dist/nmap-#{version}.dmg"
   homepage 'http://nmap.org/'
-  license :unknown
+  license :gpl
 
   pkg "nmap-#{version}.mpkg"
+
   uninstall :pkgutil => 'org.insecure.nmap*.pkg'
 end

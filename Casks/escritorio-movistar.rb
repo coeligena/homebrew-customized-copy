@@ -4,9 +4,10 @@ cask :v1 => 'escritorio-movistar' do
 
   url "http://www.movistar.es/estaticos/descargaaplicaciones/Escritorio%20Movistar_v#{version}.pkg"
   homepage 'http://www.movistar.es/particulares/servicios/descargaaplicaciones'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "Escritorio Movistar_v#{version}.pkg"
+
   uninstall :quit => 'com.movistar.tgcm.devel.tme',
             :pkgutil => [
                           'com.ZTE.DatacardDriver.MacV1.3.41NDISICAEM1000.01.02',

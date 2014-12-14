@@ -6,7 +6,7 @@ cask :v1 => 'gpgtools' do
   gpg "#{url}.sig",
       :key_url => 'https://gpgtools.org/GPGTools%2000D026C4.asc'
   homepage 'https://gpgtools.org/index.html'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'Install.pkg'
   # todo, remove all ENV variables
@@ -15,6 +15,7 @@ cask :v1 => 'gpgtools' do
            '/usr/local/MacGPG2/libexec/fixGpgHome', Etc.getpwuid(Process.euid).name,
                                                     ENV['GNUPGHOME'] ? ENV['GNUPGHOME'] : Pathname.new(File.expand_path('~')).join('.gnupg')
   end
+
   uninstall :pkgutil => 'org.gpgtools.*',
             :quit => [
                       'com.apple.mail',
@@ -41,7 +42,6 @@ cask :v1 => 'gpgtools' do
     system '/bin/bash', '-c', '[[ "$(/usr/bin/readlink /usr/local/bin/gpg)"       =~ MacGPG2 ]] && /bin/rm -- /usr/local/bin/gpg'
     system '/bin/bash', '-c', '[[ "$(/usr/bin/readlink /usr/local/bin/gpg-agent)" =~ MacGPG2 ]] && /bin/rm -- /usr/local/bin/gpg-agent'
   end
-
   zap       :delete => [
                         '~/Library/Services/GPGServices.service',
                         '~/Library/Mail/Bundles/GPGMail.mailbundle',

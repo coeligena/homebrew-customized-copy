@@ -4,8 +4,9 @@ cask :v1 => 'processing' do
 
   url "http://download.processing.org/processing-#{version}-macosx.zip"
   homepage 'http://processing.org/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   app 'Processing.app'
+
   zap :delete => '~/Library/Processing/preferences.txt'
 end

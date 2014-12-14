@@ -4,8 +4,9 @@ cask :v1 => 'odrive' do
 
   url "http://cdn-mac.odrive.com/odrive.#{version}.dmg"
   homepage 'http://www.odrive.com'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "odrive.#{version}.pkg"
+
   uninstall :pkgutil => 'com.oxygencloud.odrive.*'
 end

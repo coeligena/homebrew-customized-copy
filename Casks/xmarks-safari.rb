@@ -4,9 +4,10 @@ cask :v1 => 'xmarks-safari' do
 
   url "https://static.xmarks.com/clients/safari/xmarks_for_safari_#{version}.dmg"
   homepage 'http://www.xmarks.com/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'Xmarks for Safari Installer.pkg'
+
   uninstall :pkgutil => [
                          'com.xmarks.XmarksForSafari.pkg',
                          'com.xmarks.XmarksPreferencePane.pkg',

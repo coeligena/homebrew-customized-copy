@@ -4,9 +4,10 @@ cask :v1 => 'toad' do
 
   url "http://community-downloads.quest.com/toadsoft/toadmacedition/ToadMacEdition_#{version.gsub('.','')}.pkg"
   homepage 'http://www.toadworld.com/products/toad-mac-edition/default.aspx'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'ToadMacEdition_108.pkg'
+
   uninstall :pkgutil => 'com.dell.Toad',
             :delete => '/Applications/Toad.app'
 end

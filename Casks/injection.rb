@@ -4,9 +4,10 @@ cask :v1 => 'injection' do
 
   url "http://injectionforxcode.johnholdsworth.com/InjectionPluginV#{version}.pkg"
   homepage 'http://injectionforxcode.com/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "InjectionPluginV#{version}.pkg"
+
   uninstall :pkgutil => 'com.injectionforxcode.injectionPluginForXcode.InjectionPlugin.pkg',
             :quit => 'com.johnholdsworth.InjectionPluginIII'
   zap       :delete => '~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/InjectionPlugin.xcplugin'

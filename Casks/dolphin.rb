@@ -4,9 +4,10 @@ cask :v1 => 'dolphin' do
 
   url "http://dl.dolphin-emu.org/builds/dolphin-master-#{version}.dmg"
   homepage 'http://www.dolphin-emu.org/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   app 'Dolphin.app'
+
   zap :delete => [
                   '~/Library/Application Support/Dolphin',
                   '~/Library/Preferences/org.dolphin-emu.dolphin.plist',

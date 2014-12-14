@@ -4,9 +4,10 @@ cask :v1 => 'mactex' do
 
   url "http://mirror.ctan.org/systems/mac/mactex/mactex-#{version}.pkg"
   homepage 'http://www.tug.org/mactex/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "mactex-#{version}.pkg"
+
   uninstall :pkgutil => [
                          'org.tug.mactex.ghostscript9.10',
                          'org.tug.mactex.gui2014',

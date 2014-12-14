@@ -4,8 +4,9 @@ cask :v1 => 'hexels' do
 
   url 'http://hexraystudios.com/Hexels.dmg'
   homepage 'http://hexraystudios.com/hexels/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   app 'Hexels.app'
+
   zap :delete => '~/Library/Preferences/com.hex-ray.hexels.plist'
 end

@@ -4,9 +4,10 @@ cask :v1 => 'noejectdelay' do
 
   url "https://pqrs.org/macosx/keyremap4macbook/files/NoEjectDelay-#{version}.dmg"
   homepage 'https://pqrs.org/macosx/keyremap4macbook/noejectdelay.html.en'
-  license :unknown
+  license :public_domain
 
   pkg 'NoEjectDelay.pkg'
+
   uninstall :kext => 'org.pqrs.driver.NoEjectDelay',
             :pkgutil => 'org.pqrs.driver.NoEjectDelay'
 end

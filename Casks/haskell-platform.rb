@@ -4,9 +4,10 @@ cask :v1 => 'haskell-platform' do
 
   url "http://www.haskell.org/platform/download/#{version}/Haskell%20Platform%20#{version}%2064bit.signed.pkg"
   homepage 'http://www.haskell.org/platform/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "Haskell Platform #{version} 64bit.signed.pkg"
+
   uninstall :script => { :executable => '/usr/bin/uninstall-hs', :args => %w[all --remove] },
             :pkgutil => 'org.haskell.HaskellPlatform.*'
 end

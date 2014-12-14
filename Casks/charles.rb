@@ -4,9 +4,10 @@ cask :v1 => 'charles' do
 
   url "http://www.charlesproxy.com/assets/release/#{version}/charles-proxy-#{version}-applejava.dmg"
   homepage 'http://www.charlesproxy.com/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   app 'Charles.app'
+
   zap :delete => [
                   '~/Library/Application Support/Charles',
                   '~/Library/Preferences/com.xk72.charles.config',

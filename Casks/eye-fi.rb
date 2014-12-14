@@ -4,8 +4,9 @@ cask :v1 => 'eye-fi' do
 
   url "http://download.eyefi.com/x2/#{version}/Eye-Fi.dmg"
   homepage 'http://support.eye.fi/downloads'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'Eye-Fi.mpkg'
+
   uninstall :pkgutil => 'fi.eye.*'
 end

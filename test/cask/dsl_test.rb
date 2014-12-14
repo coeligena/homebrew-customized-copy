@@ -8,27 +8,103 @@ describe Cask::DSL do
     test_cask.version.must_equal '1.2.3'
   end
 
-  it "prevents the entire world from crashing when a Cask includes an unknown method" do
+  describe "when a Cask includes an unknown method" do
     UnexpectedMethodCask = Class.new(Cask)
-    begin
-      TestHelper.must_output(self, lambda {
+    attempt_unknown_method = nil
+
+    before do
+      attempt_unknown_method = lambda {
         UnexpectedMethodCask.class_eval do
           future_feature :not_yet_on_your_machine
         end
-      }, <<-WARNING.undent.chomp)
-        Warning: Unexpected method 'future_feature' called on UnexpectedMethodCask.
-        Warning:#{' '}
-        Warning:   If you are working on UnexpectedMethodCask, this may point to a typo. Otherwise
-        Warning:   it probably means this Cask is using a new feature. If that feature
-        Warning:   has been released, running
-        Warning:#{' '}
-        Warning:     brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
-        Warning:#{' '}
-        Warning:   should fix it. Otherwise you should wait to use UnexpectedMethodCask until the
-        Warning:   new feature is released.
-      WARNING
-    rescue Exception => e
-      flunk("Wanted unexpected method to simply warn, but got exception #{e}")
+      }
+    end
+
+    it "prints a warning that it has encountered an unexpected method" do
+      expected = r = Regexp.compile(<<-EOREGEX.undent.lines.map(&:chomp).join(''))
+        (?m)
+        Warning:
+        .*
+        Unexpected method 'future_feature' called on Cask unexpected-method-cask\\.
+        .*
+        brew update && brew upgrade brew-cask && brew cleanup && brew cask cleanup
+        .*
+        https://github.com/caskroom/homebrew-cask/issues
+      EOREGEX
+
+      TestHelper.must_output(self, attempt_unknown_method, expected)
+    end
+
+    it "will simply warn, not throw an exception" do
+      begin
+        capture_subprocess_io { attempt_unknown_method.call }
+      rescue Exception => e
+        flunk("Wanted unexpected method to simply warn, but got exception #{e}")
+      end
+    end
+  end
+
+  describe "header line" do
+    it "requires a valid header format" do
+      err = lambda {
+        invalid_cask = Cask.load('invalid/invalid-header-format')
+      }.must_raise(CaskInvalidError)
+      err.message.must_include 'Bad header line: parse failed'
+    end
+
+    it "requires the header token to match the file name" do
+      err = lambda {
+        invalid_cask = Cask.load('invalid/invalid-header-token-mismatch')
+      }.must_raise(CaskInvalidError)
+      err.message.must_include 'Bad header line:'
+      err.message.must_include 'does not match file name'
+    end
+
+    it "requires a valid minimum DSL version in the header" do
+      err = lambda {
+        invalid_cask = Cask.load('invalid/invalid-header-version')
+      }.must_raise(CaskInvalidError)
+      err.message.must_include 'Bad header line:'
+      err.message.must_include 'is less than required minimum version'
+    end
+  end
+
+  describe "name stanza" do
+    it "lets you set the full name via a name stanza" do
+      NameCask = Class.new(Cask)
+      NameCask.class_eval do
+        name 'Proper Name'
+      end
+      instance = NameCask.new
+      instance.full_name.must_equal [
+                                     'Proper Name',
+                                    ]
+    end
+
+    it "Accepts an array value to the name stanza" do
+      ArrayNameCask = Class.new(Cask)
+      ArrayNameCask.class_eval do
+        name ['Proper Name', 'Alternate Name']
+      end
+      instance = ArrayNameCask.new
+      instance.full_name.must_equal [
+                                     'Proper Name',
+                                     'Alternate Name',
+                                    ]
+    end
+
+    it "Accepts multiple name stanzas" do
+      MultiNameCask = Class.new(Cask)
+      MultiNameCask.class_eval do
+        name 'Proper Name'
+        name 'Alternate Name'
+      end
+      instance = MultiNameCask.new
+      # the sort is a hack to deal with Ruby 1.8 oddities
+      instance.full_name.sort.must_equal [
+                                          'Proper Name',
+                                          'Alternate Name',
+                                         ].sort
     end
   end
 
@@ -211,14 +287,62 @@ describe Cask::DSL do
   end
 
   describe "depends_on stanza" do
-    it "allows depends_on stanza to be specified" do
-      cask = Cask.load('with-depends-on')
+    it "refuses to load with an invalid depends_on key" do
+      err = lambda {
+        invalid_cask = Cask.load('invalid/invalid-depends-on-key')
+      }.must_raise(CaskInvalidError)
+    end
+  end
+
+  describe "depends_on :formula" do
+    it "allows depends_on :formula to be specified" do
+      cask = Cask.load('with-depends-on-formula')
       cask.depends_on.formula.wont_be_nil
     end
 
-    it "refuses to load invalid depends_on key" do
+    it "allows multiple depends_on :formula to be specified" do
+      cask = Cask.load('with-depends-on-formula')
+      cask.depends_on.formula.wont_be_nil
+    end
+  end
+
+  describe "depends_on :macos" do
+    it "allows depends_on :macos to be specified" do
+      cask = Cask.load('with-depends-on-macos-string')
+      cask.depends_on.macos.wont_be_nil
+    end
+    it "refuses to load with an invalid depends_on :macos value" do
       err = lambda {
-        invalid_cask = Cask.load('invalid/invalid-depends-on-key')
+        invalid_cask = Cask.load('invalid/invalid-depends-on-macos-bad-release')
+      }.must_raise(CaskInvalidError)
+    end
+    it "refuses to load with conflicting depends_on :macos forms" do
+      err = lambda {
+        invalid_cask = Cask.load('invalid/invalid-depends-on-macos-conflicting-forms')
+      }.must_raise(CaskInvalidError)
+    end
+  end
+
+  describe "depends_on :arch" do
+    it "allows depends_on :arch to be specified" do
+      cask = Cask.load('with-depends-on-arch')
+      cask.depends_on.arch.wont_be_nil
+    end
+    it "refuses to load with an invalid depends_on :arch value" do
+      err = lambda {
+        invalid_cask = Cask.load('invalid/invalid-depends-on-arch-value')
+      }.must_raise(CaskInvalidError)
+    end
+  end
+
+  describe "depends_on :x11" do
+    it "allows depends_on :x11 to be specified" do
+      cask = Cask.load('with-depends-on-x11')
+      cask.depends_on.x11.wont_be_nil
+    end
+    it "refuses to load with an invalid depends_on :x11 value" do
+      err = lambda {
+        invalid_cask = Cask.load('invalid/invalid-depends-on-x11-value')
       }.must_raise(CaskInvalidError)
     end
   end

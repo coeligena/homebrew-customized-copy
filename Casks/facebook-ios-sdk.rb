@@ -4,8 +4,9 @@ cask :v1 => 'facebook-ios-sdk' do
 
   url "https://developers.facebook.com/resources/facebook-ios-sdk-#{version}.pkg"
   homepage 'https://developers.facebook.com/docs/ios'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "facebook-ios-sdk-#{version}.pkg"
+
   uninstall :pkgutil => 'com.facebook.sdk.pkg'
 end

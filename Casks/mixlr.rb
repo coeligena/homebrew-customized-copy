@@ -4,8 +4,9 @@ cask :v1 => 'mixlr' do
 
   url 'http://cdn.mixlr.com/Mixlr_beta_latest.pkg'
   homepage 'http://mixlr.com'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'Mixlr_beta_latest.pkg'
+
   uninstall :pkgutil => 'com.mixlr.Mixlr'
 end

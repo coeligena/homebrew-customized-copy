@@ -4,8 +4,9 @@ cask :v1 => 'magican' do
 
   url 'http://www.magicansoft.com/download/Magican.pkg'
   homepage 'http://www.magicansoft.com/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'Magican.pkg'
+
   uninstall :pkgutil => 'com.magican.*'
 end

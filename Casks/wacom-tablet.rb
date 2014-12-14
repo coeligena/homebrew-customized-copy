@@ -4,9 +4,10 @@ cask :v1 => 'wacom-tablet' do
 
   url "http://cdn.wacom.com/u/productsupport/drivers/mac/professional/WacomTablet_#{version}.dmg"
   homepage 'http://www.wacom.com/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg 'Install Wacom Tablet.pkg'
+
   uninstall :launchctl => 'com.wacom.wacomtablet',
             :quit => [
                       'com.wacom.TabletDriver',

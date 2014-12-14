@@ -6,8 +6,9 @@ cask :v1 => 'gitbox' do
   appcast 'http://gitboxapp.com/updates.xml',
           :sha256 => '4a771aa4d35cd0bf9f821fbf1e60741cb1d9ee3724ff66550e46fba98bace8c1'
   homepage 'http://gitboxapp.com/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   app 'Gitbox.app'
+
   zap :delete => '~/Library/Preferences/com.oleganza.gitbox.plist'
 end

@@ -1,0 +1,23 @@
+cask :v1 => 'tuck' do
+  version :latest
+  sha256 :no_check
+
+<<<<<<< HEAD
+  url 'http://www.irradiatedsoftware.com/download/Tuck.zip'
+  homepage 'http://www.irradiatedsoftware.com/labs/'
+  license :gratis
+
+  app 'Tuck.app'
+=======
+  url 'http://www.irradiatedsoftware.com/downloads/Tuck.zip'
+  appcast 'http://www.irradiatedsoftware.com/updates/profiles/tuck.php'
+  homepage 'http://www.irradiatedsoftware.com/labs/'
+  license :unknown    # todo: improve this machine-generated value
+
+  app 'Tuck.app'
+
+  zap :delete => [
+                  '~/Library/Preferences/com.irradiatedsoftware.Tuck.plist',
+                 ]
+>>>>>>> caskroom/homebrew-cask/master
+end

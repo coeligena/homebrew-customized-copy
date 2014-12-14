@@ -4,8 +4,9 @@ cask :v1 => 'mosh' do
 
   url "https://mosh.mit.edu/mosh-#{version}-3.pkg"
   homepage 'http://mosh.mit.edu/'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "mosh-#{version}-3.pkg"
+
   uninstall :pkgutil => 'edu.mit.mosh.mosh.pkg'
 end

@@ -4,9 +4,10 @@ cask :v1 => 'drobo-dashboard' do
 
   url "http://files.drobo.com/webrelease/dashboard/Drobo-Dashboard-#{version}.dmg"
   homepage 'http://www.drobo.com'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "Install.app/Contents/Drobo_Dashboard_Installer_#{version}.pkg"
+
   uninstall :script => 'Uninstall.app/Contents/Resources/Scripts/Drobo_Dashboard_uninstall.sh',
             :pkgutil => 'com.datarobotics.drobodashboard'
 end

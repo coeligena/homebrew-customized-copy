@@ -4,8 +4,9 @@ cask :v1 => 'hiera' do
 
   url "https://downloads.puppetlabs.com/mac/hiera-#{version}.dmg"
   homepage 'https://projects.puppetlabs.com/projects/hiera'
-  license :unknown
+  license :unknown    # todo: improve this machine-generated value
 
   pkg "hiera-#{version}.pkg"
+
   uninstall :pkgutil => 'com.puppetlabs.hiera'
 end

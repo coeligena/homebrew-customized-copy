@@ -1,4 +1,4 @@
-class Prizmo < Cask
+cask :v1 => 'prizmo' do
   version '3'
   sha256 '309ee4e6d19ad8bfb03dd990909d82515e08b778bb3ac09c2736254fb8259bf4'
   

@@ -4,8 +4,9 @@ cask :v1 => 'facter' do
 
   url "https://downloads.puppetlabs.com/mac/facter-#{version}.dmg"
   homepage 'https://puppetlabs.com/facter'
-  license :unknown
+  license :apache
 
   pkg "facter-#{version}.pkg"
+
   uninstall :pkgutil => 'com.puppetlabs.facter'
 end
