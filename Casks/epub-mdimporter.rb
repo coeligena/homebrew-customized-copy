@@ -7,7 +7,7 @@ cask :v1 => 'epub-mdimporter' do
   license :oss
 
   preflight do
-    system '/usr/bin/tar', '-xf', '/Library/Caches/Homebrew/epub-mdimporter-1.6.zip'
+    system '/usr/bin/tar', '-xf', '/Library/Caches/Homebrew/epub-mdimporter-1.6.zip', '-C', '/Library/Caches/Homebrew/'
     system 'mdimport', '-r', '--', '/Library/Caches/Homebrew/epub.mdimporter'
   end
 end
