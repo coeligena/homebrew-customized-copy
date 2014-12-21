@@ -1,6 +1,6 @@
 cask :v1 => 'iexplorer' do
-  version '3.5.1.6'
-  sha256 'cf965c4b1f686333adf34b0d72e4f2736ceb6f79fc871ddcecf92f8769667fcf'
+  version '3.6.0.0'
+  sha256 '78ba648551d2072f75a20aad446b9f4a9f20dd5a958906631520884cc55a1037'
 
   url "http://cdn.macroplant.com/release/iExplorer-#{version}.dmg"
   appcast 'http://www.macroplant.com/iexplorer/ie3-appcast.xml',
