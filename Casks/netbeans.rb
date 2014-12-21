@@ -4,6 +4,7 @@ class Netbeans < Cask
 
   url "http://download.netbeans.org/netbeans/#{version}/final/bundles/netbeans-#{version}-macosx.dmg"
   homepage 'https://netbeans.org/'
+<<<<<<< HEAD
   license :unknown
   
   preflight do
@@ -114,6 +115,11 @@ class Netbeans < Cask
     Dir.delete("/Applications/Netbeans/")
   end
   
+=======
+  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+
+  pkg "NetBeans #{version}.mpkg"
+>>>>>>> caskroom/homebrew-cask/master
   # Theoretically this uninstall could conflict with a separate GlassFish
   # installation.
   #

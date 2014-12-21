@@ -4,7 +4,11 @@ cask :v1 => 'istopmotion' do
 
   url "https://cdn.boinx.com/software/istopmotion/Boinx_iStopMotion_#{version}.app.zip"
   homepage 'http://www.boinx.com/istopmotion/mac/'
+<<<<<<< HEAD
   license :trial
+=======
+  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+>>>>>>> caskroom/homebrew-cask/master
 
   app 'iStopMotion.app'
 end
