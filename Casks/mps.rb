@@ -6,7 +6,7 @@ cask :v1 => 'mps' do
   homepage 'https://www.jetbrains.com/mps/'
   license :oss
 
-  app "MPS #{version}.app"
+  app "MPS #{version.sub(%r{^(\d+)\.(\d).*},'\1.\2')}.app"
 
   postflight do
     plist_set(':JVMOptions:JVMVersion', '1.6+')
