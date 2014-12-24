@@ -1,16 +1,12 @@
 cask :v1 => 'prizmo' do
-  version '3'
-  sha256 '309ee4e6d19ad8bfb03dd990909d82515e08b778bb3ac09c2736254fb8259bf4'
+  version '3.0.1'
+  sha256 '270077128ebeff1f555362254a72a14e6f9ef060316b5a2d4faed642e2362b58'
   
   url 'http://www.creaceed.com/downloads/prizmo3.zip'
   appcast 'http://www.creaceed.com/appcasts/prizmo3.xml'
   homepage 'http://www.creaceed.com/prizmo'
-<<<<<<< HEAD
-  license :trial
-  
-=======
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
->>>>>>> caskroom/homebrew-cask/master
+  license :commercial
+  
   app 'Prizmo.app'
 end
