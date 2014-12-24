@@ -2,7 +2,7 @@ cask :v1 => 'finderminder' do
   version :latest
   sha256 :no_check
 
-  url 'http://www.irradiatedsoftware.com/downloads/?file=FinderMinder.zip'
+  url 'http://www.irradiatedsoftware.com/downloads/FinderMinder.zip'
   homepage 'http://www.irradiatedsoftware.com/labs/'
   license :gratis
 
