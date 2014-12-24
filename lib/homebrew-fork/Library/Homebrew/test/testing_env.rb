@@ -4,7 +4,6 @@ $:.push(File.expand_path(__FILE__+'/../..'))
 
 require 'extend/pathname'
 require 'extend/ARGV'
-require 'extend/string'
 require 'utils'
 require 'tmpdir'
 
@@ -28,4 +27,4 @@ MACOS_VERSION = ENV.fetch('MACOS_VERSION') { MACOS_FULL_VERSION[/10\.\d+/] }
 
 # required for many tests
 # eg: undefined method `verbose?' for []:Array
-ARGV.extend(HomebrewArgvExtension)
+ARGV.extend(HomebrewForkArgvExtension)

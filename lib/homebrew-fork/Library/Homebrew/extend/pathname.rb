@@ -42,12 +42,6 @@ class Pathname
     false
   end
 
-  def chmod_R perms
-    opoo "Pathname#chmod_R is deprecated, use FileUtils.chmod_R"
-    require 'fileutils'
-    FileUtils.chmod_R perms, to_s
-  end
-
   def version
     require 'version'
     Version.parse(self)
@@ -57,50 +51,11 @@ class Pathname
     %r[^#!\s*\S+] === open('r') { |f| f.read(1024) }
   end
 
-  def incremental_hash(klass)
-    digest = klass.new
-    if digest.respond_to?(:file)
-      digest.file(self)
-    else
-      buf = ""
-      open("rb") { |f| digest << buf while f.read(1024, buf) }
-    end
-    digest.hexdigest
-  end
-
-  def sha256
-    require 'digest/sha2'
-    incremental_hash(Digest::SHA2)
-  end
-
-  def verify_checksum expected
-    raise ChecksumMissingError if expected.nil? or expected.empty?
-    actual = Checksum.new(expected.hash_type, send(expected.hash_type).downcase)
-    raise ChecksumMismatchError.new(self, expected, actual) unless expected == actual
-  end
-
   # FIXME eliminate the places where we rely on this method
   alias_method :to_str, :to_s unless method_defined?(:to_str)
 
   def cd
     Dir.chdir(self){ yield }
-  end
-
-  def subdirs
-    children.select{ |child| child.directory? }
-  end
-
-  def resolved_path
-    self.symlink? ? dirname+readlink : self
-  end
-
-  def resolved_path_exists?
-    link = readlink
-  rescue ArgumentError
-    # The link target contains NUL bytes
-    false
-  else
-    (dirname+link).exist?
   end
 
   def /(other)
@@ -111,18 +66,7 @@ class Pathname
     self + other.to_s
   end unless method_defined?(:/)
 
-  def ensure_writable
-    saved_perms = nil
-    unless writable_real?
-      saved_perms = stat.mode
-      chmod 0644
-    end
-    yield
-  ensure
-    chmod saved_perms if saved_perms
-  end
-
- if RUBY_VERSION == "2.0.0"
+  if RUBY_VERSION == "2.0.0"
     # https://bugs.ruby-lang.org/issues/9915
     prepend Module.new {
       def inspect

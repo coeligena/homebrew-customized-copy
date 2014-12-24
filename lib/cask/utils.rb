@@ -1,5 +1,4 @@
-# see Homebrew Library/Homebrew/utils.rb
-
+require 'cask/utils/tty'
 require 'yaml'
 require 'open3'
 require 'stringio'
@@ -28,13 +27,6 @@ end
 module MacOS
   def release
     version
-  end
-end
-
-# monkeypatch Tty
-class Tty
-  class << self
-    def magenta; color 35; end
   end
 end
 
@@ -101,7 +93,7 @@ module Cask::Utils
        :version,
        :license,
        :tags,
-       :sums,
+       :sha256,
        :artifacts,
        :caveats,
        :depends_on,
