@@ -91,12 +91,6 @@ cask :v1 => 'adobe-reader' do
     end
     pkg 'Adobe Reader XI Installer.pkg', :apply_choice_changes_xml => '/tmp/adobe-reader-choices.xml'
 
-  url "http://ardownload.adobe.com/pub/adobe/reader/mac/#{version.to_i}.x/#{version}/en_US/AdbeRdr#{version.gsub('.', '')}_en_US.dmg"
-  homepage 'http://www.adobe.com/products/reader.html'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
-
-  pkg 'Adobe Reader XI Installer.pkg'
-
   uninstall :pkgutil => "com.adobe.acrobat.reader.#{version.gsub('.', '')}.*",
             :delete => '/Applications/Adobe Reader.app'
   zap       :delete => [
