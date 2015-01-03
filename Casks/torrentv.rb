@@ -1,5 +1,5 @@
 cask :v1 => 'torrentv' do
-  version '0.9.6'
+  version '0.9.9'
   sha256 :no_check
   
   url "https://raw.githubusercontent.com/TorrenTV/Installers/master/mac/TorrenTV-#{version}-Mac.dmg"
