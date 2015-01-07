@@ -5,7 +5,7 @@ cask :v1 => 'appbolish' do
   url "http://www.koingosw.com/products/getmirrorfile.php?path=%2Fproducts%2Fappbolish%2Fdownload%2Fappbolish.dmg"
   name 'AppBolish'
   homepage 'http://www.koingosw.com/products/appbolish/'
-  license :trial
+  license :commercial
 
   app 'AppBolish.app'
 end
