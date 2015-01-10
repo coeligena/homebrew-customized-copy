@@ -6,9 +6,9 @@ cask :v1 => 'dash' do
   appcast 'http://kapeli.com/Dash.xml'
   name 'Dash'
   homepage 'http://kapeli.com/dash'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :commercial
 
-  app 'Dash.app'
+  app 'Dash.app', :target => 'Dashed.app'
 
   postflight do
     suppress_move_to_applications
