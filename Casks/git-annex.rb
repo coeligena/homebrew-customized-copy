@@ -20,13 +20,9 @@ cask :v1 => 'git-annex' do
   end
 
   gpg "#{url}.sig",
-      :key_url => 'https://downloads.kitenet.net/git-annex/gpg-pubkey.asc'
+    :key_url => 'https://downloads.kitenet.net/git-annex/gpg-pubkey.asc'
   homepage 'http://git-annex.branchable.com/'
-<<<<<<< HEAD
   license :oss
-=======
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
->>>>>>> caskroom/homebrew-cask/master
 
   app 'git-annex.app'
   binary 'git-annex.app/Contents/MacOS/git-annex'
