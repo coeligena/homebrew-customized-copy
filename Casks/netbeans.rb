@@ -4,7 +4,6 @@ cask :v1 => 'netbeans' do
 
   url "http://download.netbeans.org/netbeans/#{version}/final/bundles/netbeans-#{version}-macosx.dmg"
   homepage 'https://netbeans.org/'
-<<<<<<< HEAD
   license :oss
   
   preflight do
@@ -115,8 +114,7 @@ cask :v1 => 'netbeans' do
     Dir.delete("/Applications/Netbeans/")
   end
   
-=======
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :oss
 
   pkg "NetBeans #{version}.pkg"
   # Theoretically this uninstall could conflict with a separate GlassFish
