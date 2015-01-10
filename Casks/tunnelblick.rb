@@ -15,10 +15,8 @@ cask :v1 => 'tunnelblick' do
 
   depends_on :macos => '>= :tiger'
 
-  caveats do
-    <<-EOS.undent
-    For security reasons, Tunnelblick must be installed to /Applications,
+  caveats <<-EOS.undent
+    For security reasons, #{token} must be installed to /Applications,
     and will request to be moved at launch.
-    EOS
-  end
+  EOS
 end

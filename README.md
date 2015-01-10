@@ -1,7 +1,7 @@
 # "To install, drag this icon..." no more!
 
-[![Build Status](https://travis-ci.org/caskroom/homebrew-cask.png?branch=master)](https://travis-ci.org/caskroom/homebrew-cask)
-[![Code Climate](https://codeclimate.com/github/caskroom/homebrew-cask.png)](https://codeclimate.com/github/caskroom/homebrew-cask)
+[![Build Status](https://img.shields.io/travis/caskroom/homebrew-cask/master.svg)](https://travis-ci.org/caskroom/homebrew-cask)
+[![Code Climate](https://img.shields.io/codeclimate/github/caskroom/homebrew-cask.svg)](https://codeclimate.com/github/caskroom/homebrew-cask)
 
 
 Let's see if we can get the elegance, simplicity, and speed of Homebrew for the
@@ -10,7 +10,7 @@ installation and management of GUI Mac applications such as Google Chrome and Ad
 Homebrew-cask provides a friendly homebrew-style CLI workflow for the
 administration of Mac applications distributed as binaries.
 
-It's implemented as a `homebrew` "[external command](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/External-Commands.md)"
+It's implemented as a `homebrew` [external command](https://github.com/Homebrew/homebrew/blob/master/share/doc/homebrew/External-Commands.md)
 called `cask`.
 
 ## Let's try it!

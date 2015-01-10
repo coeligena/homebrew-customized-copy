@@ -9,6 +9,7 @@ all pretty happy about this.  Here's how to get started:
  * [Finding a Home For Your Cask](#finding-a-home-for-your-cask)
  * [Submitting Your Changes](#submitting-your-changes)
  * [Cleaning up](#cleaning-up)
+ * [Reporting Bugs](README.md#reporting-bugs)
 
 
 ## Getting Set Up To Contribute
@@ -229,7 +230,7 @@ If possible, avoid creating tokens which differ only by the placement of
 hyphens.
 
 To generate a token manually, or to learn about exceptions for unusual cases,
-see [CASK_TOKEN_REFERENCE.md](doc/CASK_TOKEN_REFERENCE.md).
+see [cask_token_reference.md](doc/cask_token_reference.md).
 
 
 ### Archives With Subfolders
@@ -414,10 +415,5 @@ git checkout master
 
 Neat and tidy!
 
-
-## Working On homebrew-cask Itself
-
-If you'd like to hack on the Ruby code in the project itself, please
-see [hacking.md](doc/hacking.md).
 
 # <3 THANK YOU! <3
