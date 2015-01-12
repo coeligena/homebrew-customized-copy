@@ -6,6 +6,6 @@ cask :v1 => 'tagbak' do
   homepage 'http://brettterpstra.com/projects/tagbak/'
   license :oss
 
-  binary 'tagbak'
-  binary 'bookmark'
+  binary 'tagbak-master/tagbak'
+  binary 'tagbak-master/bookmark'
 end
