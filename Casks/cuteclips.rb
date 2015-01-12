@@ -4,7 +4,7 @@ cask :v1 => 'cuteclips' do
 
   url 'http://cuteclips3.com/CuteClips3.dmg'
   homepage 'http://cuteclips3.com'
-  license :trial
+  license :commercial
 
-  app 'CuteClips3.app'
+  app 'CuteClips3.app', :target => 'CuteClips 3.app'
 end
