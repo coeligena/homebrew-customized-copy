@@ -4,7 +4,7 @@ cask :v1 => 'clipbuddy' do
 
   url 'http://www.ondesoft.com/download/odclipbuddy_mac.dmg'
   homepage 'http://www.ondesoft.com/clipbuddy_mac/'
-  license :trial
+  license :commercial
 
   app 'ClipBuddy.app'
 end
