@@ -6,7 +6,7 @@ cask :v1 => 'devonthink-personal' do
     appcast 'http://www.devon-technologies.com/Sparkle/DEVONthink2.xml',
             :sha256 => '5166d03885dc47d5d4fe1aadd1f782d346fcc7a5f04a855657490b05d2559c92'
     homepage 'http://www.devontechnologies.com/products/devonthink/devonthink-personal.html'
-    license :trial
+    license :commercial
 
     app 'DEVONthink.app'
 end

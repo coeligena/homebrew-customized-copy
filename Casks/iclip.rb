@@ -4,7 +4,7 @@ cask :v1 => 'iclip' do
 
   url 'http://www.irradiatedsoftware.com/download/iClip.zip'
   homepage 'http://www.irradiatedsoftware.com/iclip/'
-  license :trial
+  license :commercial
 
   app 'iClip.app'
 end

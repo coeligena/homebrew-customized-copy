@@ -4,7 +4,7 @@ cask :v1 => 'skedit' do
 
   url "http://downloads.beforedawnsolutions.com/skedit/skEdit_v#{version.gsub('.','')}.dmg"
   homepage 'http://beforedawnsolutions.com/skedit/'
-  license :trial
+  license :commercial
 
   app 'skEdit.app'
 end

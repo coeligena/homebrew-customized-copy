@@ -4,7 +4,7 @@ cask :v1 => 'tembo' do
 
   url 'http://houdah.com/tembo/download_assets/Tembo_latest.zip'
   homepage 'http://houdah.com/tembo/'
-  license :trial
+  license :commercial
 
   app 'Tembo.app'
 end

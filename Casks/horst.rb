@@ -4,7 +4,7 @@ cask :v1 => 'horst' do
 
   url 'http://penck.de/download/horst/zip/latest'
   homepage 'http://penck.de/horst/'
-  license :trial
+  license :commercial
 
   app 'Horst.app'
 end

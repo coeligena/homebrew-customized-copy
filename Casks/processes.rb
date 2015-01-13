@@ -4,7 +4,7 @@ cask :v1 => 'processes' do
 
   url "https://www.oneperiodic.com/files/Processes%20v#{version}.zip"
   homepage 'http://www.oneperiodic.com/products/processes/'
-  license :trial
+  license :commercial
 
   app 'Processes.app'
 end

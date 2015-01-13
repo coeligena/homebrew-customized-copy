@@ -4,7 +4,7 @@ cask :v1 => 'decompose' do
   
   url "https://www.oneperiodic.com/files/Decompose%20v#{version}.zip"
   homepage 'https://www.oneperiodic.com/products/decompose/'
-  license :trial
+  license :commercial
   
   app 'Decompose.app'
 end

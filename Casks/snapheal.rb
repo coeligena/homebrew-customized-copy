@@ -5,7 +5,7 @@ cask :v1 => 'snapheal' do
   url "https://s3-eu-west-1.amazonaws.com/snapheal/SnaphealNA_v#{version.gsub('.','_')}.dmg"
   appcast 'https://s3-eu-west-1.amazonaws.com/snapheal/'
   homepage 'http://macphun.com/eu/snapheal'
-  license :trial
+  license :commercial
   
   app 'Snapheal.app'
 end

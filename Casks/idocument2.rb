@@ -5,7 +5,7 @@ cask :v1 => 'idocument2' do
   url 'http://t.icyblaze.com/id2latest'
   appcast 'http://t.icyblaze.com/id2c4ud'
   homepage 'http://www.icyblaze.com/idocument/'
-  license :trial
+  license :commercial
 
   app 'iDocument 2.app'
 end

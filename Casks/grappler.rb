@@ -5,7 +5,7 @@ cask :v1 => 'grappler' do
   url 'https://files.thelittleappfactory.com/grappler/Grappler.zip'
   appcast 'https://files.thelittleappfactory.com/grappler/appcast.xml'
   homepage 'https://thelittleappfactory.com/grappler/'
-  license :trial
+  license :commercial
 
   app 'Grappler.app'
 end

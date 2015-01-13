@@ -4,7 +4,7 @@ cask :v1 => 'subliminal' do
 
   url 'https://s3.amazonaws.com/subliminalapp/subliminal.zip'
   homepage 'http://www.smartcodehq.com/subliminal/'
-  license :trial
+  license :commercial
 
   app 'Subliminal.app'
 end
