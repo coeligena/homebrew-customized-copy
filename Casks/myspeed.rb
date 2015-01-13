@@ -222,10 +222,10 @@ then
 fi
 
 # Remove the NPAPI MySpeed Plugin, if it exists
-if [ -e /Library/Internet\ Plug-Ins/NPMySpeedPlugin.plugin ] 
+if [ -e "/Library/Internet Plug-Ins/NPMySpeedPlugin.plugin" ] 
 then 
     echo "Removing NPMySpeedPlugin"
-    echo $sudoPassword | sudo -S rm -rf /Library/Internet\ Plug-Ins/NPMySpeedPlugin.plugin 
+    echo $sudoPassword | sudo -S rm -rf "/Library/Internet Plug-Ins/NPMySpeedPlugin.plugin" 
 fi
 
 # Remove the MySpeed Scripting Addition, if it exists
