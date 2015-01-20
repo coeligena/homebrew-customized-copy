@@ -106,13 +106,13 @@ module Hbc::Utils
 
   def self.which(cmd, path=ENV['PATH'])
     unless File.basename(cmd) == cmd.to_s
-      # path contains a directory element
+      # cmd contains a directory element
       cmd_pn = Pathname(cmd)
       return nil unless cmd_pn.absolute?
       return resolve_executable(cmd_pn)
     end
     path.split(File::PATH_SEPARATOR).each do |elt|
-      fq_cmd = Pathname(elt).join(cmd)
+      fq_cmd = Pathname(elt).expand_path.join(cmd)
       resolved = resolve_executable fq_cmd
       return resolved if resolved
     end
@@ -133,8 +133,10 @@ module Hbc::Utils
   end
 
   def self.exec_editor(*args)
-    editor = [ *ENV.values_at('HOMEBREW_EDITOR', 'VISUAL', 'EDITOR'),
-               *%w{mate edit vim /usr/bin/vim} ].compact.first
+    editor = [
+              *ENV.values_at('HOMEBREW_EDITOR', 'VISUAL', 'EDITOR'),
+              *%w{mate edit vim /usr/bin/vim}.map{ |x| which(x) }
+             ].compact.first.to_s
     exec(*editor.split.concat(args))
   end
 
