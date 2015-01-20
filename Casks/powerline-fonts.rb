@@ -6,6 +6,6 @@ cask :v1 => 'powerline-fonts' do
   homepage 'https://github.com/powerline/fonts/'
   license :oss
   
-  installer :script => 'install.sh',
+  installer :script => 'fonts-master/install.sh',
             :sudo => false
 end
