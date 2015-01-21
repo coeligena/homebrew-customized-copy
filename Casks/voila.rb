@@ -4,7 +4,7 @@ cask :v1 => 'voila' do
 
   url 'http://www.globaldelight.com/voila/downloads/voila.dmg'
   homepage 'http://www.globaldelight.com/voila/'
-  license :trial
+  license :commercial
 
   installer :manual => 'Voila.app'
 end
