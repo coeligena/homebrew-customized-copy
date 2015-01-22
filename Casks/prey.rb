@@ -1,12 +1,12 @@
 cask :v1 => 'prey' do
-  version '0.6.4'
-  sha256 '361996d067539da7881aa3618b737ba4a0846df13ca8c9b8b07151d42f81fb86'
+  version '1.3.6'
+  sha256 'd6c1c5dac39b0404a194290e4b0e3b975debfd32e174327aa14a345b5a8e8262'
 
-  url "https://preyproject.com/releases/current/prey-#{version}-mac-batch.mpkg.zip"
+  url "https://prey-releases.s3.amazonaws.com/node-client/#{version}/prey-mac-#{version}-x64.pkg"
   homepage 'https://preyproject.com'
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
-  pkg "prey-#{version}-mac-batch.mpkg"
+  pkg "prey-mac-#{version}-x64"
 
   uninstall :pkgutil => 'com.forkhq.prey'
   caveats <<-EOS.undent
