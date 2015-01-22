@@ -6,7 +6,7 @@ cask :v1 => 'prey' do
   homepage 'https://preyproject.com'
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
-  pkg "prey-mac-#{version}-x64"
+  pkg "prey-mac-#{version}-x64.pkg"
 
   uninstall :pkgutil => 'com.forkhq.prey'
   caveats <<-EOS.undent
