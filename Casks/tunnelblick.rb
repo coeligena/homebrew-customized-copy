@@ -1,5 +1,5 @@
 cask :v1 => 'tunnelblick' do
-  version '3.5beta04_build_4198'
+  version '3.5beta06_build_4211'
   sha256 '62be3efc484d1e7d2b5a38632aced581a2a4847239949541fcb02c180fd28d81'
 
   # sourceforge.net is the official download host per the vendor homepage
