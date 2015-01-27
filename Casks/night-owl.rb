@@ -1,4 +1,4 @@
-cask :v1 => 'yorufukurou' do
+cask :v1 => 'night-owl' do
   version :latest
   sha256 :no_check
 
@@ -6,7 +6,7 @@ cask :v1 => 'yorufukurou' do
   url 'http://aki-null.net/yf/YoruFukurou_SL.zip'
   appcast 'http://sites.google.com/site/yorufukurou/distribution/appcast.xml'
   homepage 'https://sites.google.com/site/yorufukurou/home-en'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :gratis
 
-  app 'YoruFukurou.app'
+  app 'Night Owl.app'
 end
