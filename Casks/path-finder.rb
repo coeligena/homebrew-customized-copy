@@ -2,13 +2,15 @@ cask :v1 => 'path-finder' do
   version :latest
   sha256 :no_check
 
-  url 'http://get.cocoatech.com/PF7.zip'
-  homepage 'http://www.cocoatech.com/pathfinder/'
+  homepage '7.0.7%20%281662%29'
+  url "http://localhost:8000/Tools%20%26%20Utilities/Path%20Finder/Path%20Finder%20#{homepage}.zip"
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
   app 'Path Finder.app'
 
   postflight do
+    system 'tag', '-a', 'Purple', "#{staged_path}/Path Finder.app"
+    system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Tools & Utilities/Path Finder/"
     suppress_move_to_applications :key => 'kNTMoveToApplicationsFolderAlertSuppress'
   end
 

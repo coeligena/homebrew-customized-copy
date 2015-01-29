@@ -7,4 +7,14 @@ cask :v1 => 'instacast' do
   license :commercial
 
   app 'Instacast.app'
+
+  postflight do
+    system 'tag', '-a', 'Purple', "#{staged_path}/Instacast.app"
+    system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Internet, Networking & Basic Tools/Instacast/"
+    suppress_move_to_applications :key => 'suppressMoveToApplications'
+  end
+  
+  caveats <<-EOS.undent
+    DO MORE...
+  EOS
 end

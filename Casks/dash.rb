@@ -2,15 +2,16 @@ cask :v1 => 'dash' do
   version :latest
   sha256 :no_check
 
-  url 'http://kapeli.com/Dash.zip'
+  homepage '2.2.1'
+  url "http://localhost:8000/Development/Dash/Dash%20#{homepage}.zip"
   appcast 'http://kapeli.com/Dash.xml'
   name 'Dash'
-  homepage 'http://kapeli.com/dash'
   license :commercial
 
   app 'Dash.app', :target => 'Dashed.app'
 
   postflight do
+    system 'tag', '-a', 'Purple', "#{staged_path}/Dashed.app"
     suppress_move_to_applications
   end
 

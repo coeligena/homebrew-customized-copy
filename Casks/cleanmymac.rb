@@ -2,15 +2,18 @@ cask :v1 => 'cleanmymac' do
   version :latest
   sha256 :no_check
 
+  homepage '2.3.2'
+
   if MacOS.release <= :snow_leopard
     # devmate.com is the official download host per the vendor homepage
+    url "http://localhost:8000/Cleaners%20%26%20Maintenance/CleanMyMac/CleanMyMac%20#{homepage}.dmg"
     url 'http://dl.devmate.com/com.macpaw.CleanMyMac/CleanMyMacClassic.dmg'
     appcast 'http://updates.devmate.com/com.macpaw.CleanMyMac.xml'
     app 'CleanMyMac.app'
     # todo: add uninstall and zap stanzas for legacy app
   else
     # devmate.com is the official download host per the vendor homepage
-    url 'http://dl.devmate.com/com.macpaw.CleanMyMac2/CleanMyMac2.dmg'
+    url "http://localhost:8000/Cleaners%20%26%20Maintenance/CleanMyMac/CleanMyMac%20#{homepage}.dmg"
     appcast 'http://updates.devmate.com/com.macpaw.CleanMyMac2.xml'
     app 'CleanMyMac 2.app'
 
@@ -31,6 +34,9 @@ cask :v1 => 'cleanmymac' do
   end
 
   name 'CleanMyMac'
-  homepage 'http://macpaw.com/cleanmymac'
   license :commercial
+  
+  postflight do
+    system 'tag', '-a', 'Purple', "#{staged_path}/CleanMyMac 2.app"
+  end
 end

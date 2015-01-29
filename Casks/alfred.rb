@@ -1,16 +1,22 @@
 cask :v1 => 'alfred' do
-  version '2.6_374'
-  sha256 'cc9f8791454056bcd0cd9ac94ae3604aa2bda4014a453c3e0cf5818a18a85eee'
+  version :latest
+  sha256 :no_check
 
-  url "file:///Files/Copy/Software/Tools & Utilities/Alfred/Alfred-#{version}.zip"
+  homepage '2.6_374'
+  url "http://localhost:8000/Tools%20%26%20Utilities/Alfred/Alfred-#{homepage}.zip"
   name 'Alfred'
-  homepage 'http://www.alfredapp.com/'
   license :commercial
 
   app 'Alfred 2.app'
   app 'Alfred 2.app/Contents/Preferences/Alfred Preferences.app'
 
   postflight do
+    system 'tag', '-a', 'Purple', "#{staged_path}/Alfred 2.app"
+    system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Tools & Utilities/Alfred/"
     suppress_move_to_applications :key => 'suppressMoveToApplications'
   end
+  
+  caveats <<-EOS.undent
+    DO MORE...
+  EOS
 end

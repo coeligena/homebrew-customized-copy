@@ -1,9 +1,9 @@
 cask :v1 => 'charles' do
-  version '3.9.3'
-  sha256 '84de5c3f233ec6af24f5bab04631daf9ef4af0c549efca8675f9d3946e5aceb8'
-
-  url "http://www.charlesproxy.com/assets/release/#{version}/charles-proxy-#{version}-applejava.dmg"
-  homepage 'http://www.charlesproxy.com/'
+  version :latest
+  sha256 :no_check
+  
+  homepage '3.9.2'
+  url "http://localhost:8000/Development/Charles%20Proxy/charles-proxy-#{homepage}-openjdk.dmg"
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
   app 'Charles.app'
@@ -12,4 +12,13 @@ cask :v1 => 'charles' do
                   '~/Library/Application Support/Charles',
                   '~/Library/Preferences/com.xk72.charles.config',
                  ]
+  
+  postflight do
+    system 'tag', '-a', 'Purple', "#{staged_path}/Charles.app"
+    system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Development/Charles Proxy/"
+  end
+
+  caveats <<-EOS.undent
+    DO MORE...
+  EOS
 end

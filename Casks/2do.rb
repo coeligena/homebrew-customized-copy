@@ -1,10 +1,14 @@
 cask :v1 => '2do' do
-  version '1.5.2'
+  version :latest
   sha256 :no_check
 
-  url 'http://2doapp.com/macfiles/2Do.26100.dmg'
-  homepage 'http://www.2doapp.com/mac/'
-  license :trial
+  homepage '1.5.2'
+  url "http://localhost:8000/Office%2C%20Productivity%20%26%20Planning/2Do/2Do%20#{homepage}.dmg"
+  license :commercial
 
   app '2Do.app'
+  
+  postflight do
+    system 'tag', '-a', 'Purple', "#{staged_path}/2Do.app"
+  end
 end
