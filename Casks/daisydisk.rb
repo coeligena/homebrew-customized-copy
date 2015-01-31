@@ -1,7 +1,4 @@
 cask :v1 => 'daisydisk' do
-  version :latest
-  sha256 :no_check
-
   homepage '3.0.3.1'
   
   if MacOS.release == :snow_leopard
@@ -11,7 +8,6 @@ cask :v1 => 'daisydisk' do
   else
     version :latest
     sha256 :no_check
-    url 'http://www.daisydiskapp.com/downloads/DaisyDisk.zip'
     url "http://localhost:8000/Cleaners%20%26%20Maintenance/DaisyDisk/DaisyDisk%20#{homepage}.zip"
   end
 

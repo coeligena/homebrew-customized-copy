@@ -2,7 +2,7 @@ cask :v1 => 'path-finder' do
   version :latest
   sha256 :no_check
 
-  homepage '7.0.7%20%281662%29'
+  homepage '7.1'
   url "http://localhost:8000/Tools%20%26%20Utilities/Path%20Finder/Path%20Finder%20#{homepage}.zip"
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 

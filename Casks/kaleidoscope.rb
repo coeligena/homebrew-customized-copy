@@ -10,7 +10,7 @@ cask :v1 => 'kaleidoscope' do
   license :commercial
 
   app 'Kaleidoscope.app'
-  binary 'Kaleidoscope.app/Contents/Resources/bin/ksdiff'
+#  binary 'Kaleidoscope.app/Contents/Resources/bin/ksdiff'
 
   postflight do
     system 'tag', '-a', 'Purple', "#{staged_path}/Kaleidoscope.app"
@@ -18,6 +18,6 @@ cask :v1 => 'kaleidoscope' do
   end
 
   caveats do
-    files_in_usr_local
+#    files_in_usr_local
   end
 end
