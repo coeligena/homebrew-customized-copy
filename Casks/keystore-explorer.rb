@@ -5,7 +5,7 @@ cask :v1 => 'keystore-explorer' do
   url "http://downloads.sourceforge.net/project/keystore-explorer/KSE%20#{version}/kse-#{version.gsub('.','')}.dmg"
   name 'KeyStore Explorer'
   homepage 'http://keystore-explorer.sourceforge.net/'
-  license :oss
+  license :gpl
   
   caveats "Install unlimited encryption Java files at http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html"
 
