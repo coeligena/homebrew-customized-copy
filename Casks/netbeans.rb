@@ -124,11 +124,9 @@ cask :v1 => 'netbeans' do
 
   pkg "NetBeans #{version}.pkg", :apply_choice_changes_xml => '/tmp/netbeans-choices.xml'
   postflight do
-    Dir.glob("/Applications/Netbeans/*").sort.each do |f|
-      filename = File.basename(f, File.extname(f))
-      File.rename(f, "/Applications/Netbeans" + File.extname(f))
-    end
-    Dir.delete("/Applications/Netbeans/")
+    system '/usr/bin/sudo', '-E', '--', 
+          'mv', '-Rf', "/Applications/Netbeans/Netbeans #{version}.app/", '/Applications/Netbeans.app/'
+    system 'rmdir', '--', '/Applications/Netbeans/'
   end
 
   # Theoretically this uninstall could conflict with a separate GlassFish
