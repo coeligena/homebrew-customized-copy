@@ -7,4 +7,12 @@ cask :v1 => 'notify' do
   license :gratis
 
   app 'Notify.app'
+  
+  postflight do
+    system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Internet, Networking & Basic Tools/Notify/"
+  end
+  
+  caveats <<-EOS.undent
+    DO MORE...
+  EOS
 end

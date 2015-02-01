@@ -87,6 +87,14 @@ cask :v1 => 'netbeans' do
         </dict>
         <dict>
             <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>ergonomics</string>
+        </dict>
+        <dict>
+            <key>attributeSetting</key>
             <integer>0</integer>
             <key>choiceAttribute</key>
             <string>selected</string>
@@ -101,11 +109,20 @@ cask :v1 => 'netbeans' do
             <key>choiceIdentifier</key>
             <string>tomcat</string>
         </dict>
+        <dict>
+            <key>attributeSetting</key>
+            <integer>1</integer>
+            <key>choiceAttribute</key>
+            <string>selected</string>
+            <key>choiceIdentifier</key>
+            <string>postinstallscripts</string>
+        </dict>
     </array>
 </plist>}
       end
   end
-  pkg "NetBeans #{version}.mpkg", :apply_choice_changes_xml => '/tmp/netbeans-choices.xml'
+
+  pkg "NetBeans #{version}.pkg", :apply_choice_changes_xml => '/tmp/netbeans-choices.xml'
   postflight do
     Dir.glob("/Applications/Netbeans/*").sort.each do |f|
       filename = File.basename(f, File.extname(f))
@@ -113,10 +130,7 @@ cask :v1 => 'netbeans' do
     end
     Dir.delete("/Applications/Netbeans/")
   end
-  
-  license :oss
 
-  pkg "NetBeans #{version}.pkg"
   # Theoretically this uninstall could conflict with a separate GlassFish
   # installation.
   #
@@ -138,5 +152,5 @@ cask :v1 => 'netbeans' do
   # by pkgutil, hence the additional ":delete" option below.
 
   uninstall :pkgutil => 'org.netbeans.ide.*|glassfish-.*',
-            :delete => '/Applications/NetBeans'
+            :delete => '/Applications/NetBeans*'
 end
