@@ -122,10 +122,15 @@ cask :v1 => 'netbeans' do
       end
   end
 
+  preflight do
+    system 'rm', '-Rf', '/Applications/Netbeans.app'
+  end
+
   pkg "NetBeans #{version}.pkg", :apply_choice_changes_xml => '/tmp/netbeans-choices.xml'
+
   postflight do
     system '/usr/bin/sudo', '-E', '--', 
-          'mv', '-Rf', "/Applications/Netbeans/Netbeans #{version}.app/", '/Applications/Netbeans.app/'
+          'mv', '-f', "/Applications/Netbeans/Netbeans #{version}.app/", '/Applications/Netbeans.app/'
     system 'rmdir', '--', '/Applications/Netbeans/'
   end
 
