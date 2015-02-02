@@ -9,5 +9,5 @@ cask :v1 => 'mailbox' do
   homepage 'http://www.mailboxapp.com/'
   license :gratis
 
-  app 'Mailbox (Beta).app'
+  app 'Mailbox (Beta).app', :target => 'Mailbox.app'
 end
