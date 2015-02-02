@@ -4,8 +4,9 @@ cask :v1 => 'haroopad' do
 
   # bitbucket.org is the official download host per the vendor homepage
   url "https://bitbucket.org/rhiokim/haroopad-download/downloads/Haroopad-v#{version}-x64.dmg"
+  name 'Haroopad'
   homepage 'http://pad.haroopress.com/'
-  license :oss
+  license :gpl
 
   app 'haroopad.app'
 end

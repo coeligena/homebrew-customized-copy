@@ -8,4 +8,8 @@ cask :v1 => 'sticky-notifications' do
   license :commercial
 
   app 'Sticky Notifications.app'
+  
+  postflight do
+    suppress_move_to_applications :key => 'suppressMoveToApplications'
+  end
 end

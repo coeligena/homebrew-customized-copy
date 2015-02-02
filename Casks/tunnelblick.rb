@@ -9,7 +9,7 @@ cask :v1 => 'tunnelblick' do
   homepage 'https://code.google.com/p/tunnelblick/'
   license :gpl
 
-  app 'Tunnelblick.app'
+  app 'Tunnelblick.app', :target => 'Tunnelblick Moved.app'
 
   uninstall :launchctl => 'net.tunnelblick.tunnelblick.LaunchAtLogin',
             :quit      => 'net.tunnelblick.tunnelblick'

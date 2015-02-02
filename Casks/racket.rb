@@ -7,5 +7,5 @@ cask :v1 => 'racket' do
   homepage 'http://racket-lang.org/'
   license :oss
 
-  suite "Racket v#{version}"
+  suite "Racket v#{version}", :target => 'Racket'
 end

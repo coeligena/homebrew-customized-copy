@@ -25,6 +25,7 @@ cask :v1 => 'git-annex' do
 
   gpg "#{url}.sig",
     :key_url => 'https://downloads.kitenet.net/git-annex/gpg-pubkey.asc'
+  name 'git-annex'
   homepage 'http://git-annex.branchable.com/'
   license :oss
 
