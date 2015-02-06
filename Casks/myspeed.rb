@@ -8,7 +8,7 @@ cask :v1 => 'myspeed' do
   homepage 'https://www.enounce.com/myspeed1-mac-download'
   license :commercial
 
-  preflight do
+  uninstall_preflight do
     File.open('/tmp/remove-myspeed.sh', 'w') do |f|
       # use "\n" for two lines of text
       f.puts %Q{#!/bin/bash
