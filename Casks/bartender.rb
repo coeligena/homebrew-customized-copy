@@ -4,6 +4,7 @@ cask :v1 => 'bartender' do
 
   homepage '1.2.28'
   url "http://localhost:8000/Tools%20%26%20Utilities/Bartender/Bartender-#{homepage}.dmg"
+  name 'Bartender'
   appcast 'http://www.macbartender.com/updates/updates.php'
   license :commercial
 
