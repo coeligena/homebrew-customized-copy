@@ -7,9 +7,9 @@ cask :v1 => 'duet' do
   name 'Duet'
   homepage 'http://www.duetdisplay.com/'
   license :unknown
-
-  app 'duet.app'
-
+    
+  app 'duet.app', :target => 'duet moved.app'
+  
   uninstall :kext => 'com.karios.driver.DuetDisplay',
             :delete => '/usr/libexec/coreduetd'
 end

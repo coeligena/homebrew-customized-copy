@@ -1,12 +1,12 @@
 cask :v1 => 'jitsi' do
-  version '2.4'
-  sha256 'ceb6b2ab04206a51faf1dbffb704a7a60ae2b7c47834b50f87da5557f543ad13'
+  version :latest
+  sha256 :no_check
 
-  url "https://download.jitsi.org/jitsi/macosx/jitsi-#{version}-latest.dmg"
+  url "https://download.jitsi.org/jitsi/macosx/jitsi-latest.dmg"
   appcast 'https://download.jitsi.org/jitsi/macosx/sparkle/updates.xml',
           :sha256 => 'db2939816e8a38c7197160ab455626af9aadc2c5603f2212e372cffb85b31949'
   homepage 'https://jitsi.org/'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :oss
 
   app 'Jitsi.app'
 end
