@@ -4,7 +4,7 @@ cask :v1 => 'ember' do
 
   homepage '1.8.3'
   url "http://localhost:8000/Design,%20Photo%20%26%20Video%20Tools%20%26%20Editors/Ember/Ember-#{homepage}.zip"
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :commercial
 
   app 'Ember.app'
   

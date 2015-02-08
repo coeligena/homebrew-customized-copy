@@ -5,7 +5,7 @@ cask :v1 => 'entropy' do
   homepage '1.6.0'
   url "http://localhost:8000/Internet%2C%20Networking%20%26%20Basic%20Tools/Entropy/Entropy-#{homepage}.zip"
   appcast 'http://hyperion.eigenlogik.com/appcast/feed/entropy/'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :commercial
 
   app 'Entropy.app'
   
