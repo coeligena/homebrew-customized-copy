@@ -1,8 +1,8 @@
 cask :v1 => 'vagrant-bar' do
-  version '1.14'
-  sha256 '6cf9a2bf9fbe41237a7afa2621d9c1e94ad225e59aa3969b8408b9adbd956334'
+  version '1.16'
+  sha256 'f5c58690960269be9a7a2597a0aad098b4bd1676c9494f6022e9c7d1e82d81bc'
 
-  url "https://github.com/BipSync/VagrantBar/releases/download/#{version}/Vagrant.Bar.zip"
+  url "https://github.com/BipSync/VagrantBar/releases/download/#{version.gsub('1.','')}/Vagrant.Bar.zip"
   homepage 'https://github.com/BipSync/VagrantBar'
   license :oss
 

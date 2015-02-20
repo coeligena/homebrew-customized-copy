@@ -12,5 +12,10 @@ cask :v1 => 'appfresh' do
 
   postflight do
     system 'tag', '-a', "Purple", "#{staged_path}/AppFresh.app"
+    system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Internet, Networking & Basic Tools/AppFresh/"
   end
+  
+  caveats <<-EOS.undent
+    DO MORE...
+  EOS
 end

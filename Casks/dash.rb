@@ -2,8 +2,8 @@ cask :v1 => 'dash' do
   version :latest
   sha256 :no_check
 
-  homepage '2.2.1'
-  url "http://localhost:8000/Development/Dash/Dash%20#{homepage}.zip"
+  homepage '2.2.3'
+  url "http://localhost:8000/Development/Dash/Dash.#{homepage}.zip"
   appcast 'http://kapeli.com/Dash.xml'
   name 'Dash'
   license :commercial

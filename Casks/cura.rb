@@ -1,8 +1,8 @@
 cask :v1 => 'cura' do
-  version '14.12.1'
-  sha256 'ace005ffd7549a6cf242f961da411d4d789e8352f8dd3b2ba0a0f8a766e99dc9'
+  version '15.02.1'
+  sha256 'a8d174a6921281704b408c74fd7414b3b2a67ddd2787707db71c02c36a004088'
 
-  url "https://ultimaker.com/en/software/download/15/Cura-#{version}-MacOS.dmg"
+  url "http://software.ultimaker.com/current/Cura-#{version}-MacOS.dmg"
   homepage 'https://ultimaker.com/en/products/software'
   license :oss
 
