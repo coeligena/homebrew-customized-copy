@@ -2,10 +2,20 @@ cask :v1 => 'omniplan' do
   version :latest
   sha256 :no_check
 
-  url 'https://www.omnigroup.com/download/latest/omniplan'
+  homepage '2.3.7'
+  url "http://localhost:8000/Office%2C%20Productivity%20%26%20Planning/OmniPlan/OmniPlan-#{homepage}.dmg"
   name 'OmniPlan'
-  homepage 'http://www.omnigroup.com/products/omniplan/'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :commercial
 
   app 'OmniPlan.app'
+
+  postflight do
+    system 'tag', '-a', 'Purple', "#{staged_path}/OmniPlan.app"
+    system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Office, Productivity & Planning/OmniPlan/"
+    suppress_move_to_applications :key => 'suppressMoveToApplications'
+  end
+  
+  caveats <<-EOS.undent
+    DO MORE...
+  EOS
 end
