@@ -2,7 +2,7 @@ cask :v1 => 'cleanmymac' do
   version :latest
   sha256 :no_check
 
-  homepage '2.3.3'
+  homepage '2.3.4'
 
   if MacOS.release <= :snow_leopard
     # devmate.com is the official download host per the vendor homepage
