@@ -5,7 +5,7 @@ cask :v1 => 'iexplorer' do
   homepage '3.6.6.0'
   url "http://localhost:8000/Mobile/iOS%20Tools/iExplorer/iExplorer-#{homepage}.dmg"
   appcast 'http://www.macroplant.com/iexplorer/ie3-appcast.xml',
-          :sha256 => '50a537b61eec96833d145abfe25affc972579f4e01cf3876aa6596ba5320db26'
+          :sha256 => 'd5a2ea8f6072e499a2cbed60dbae5952c7bc5a7ea3fa6fc79549c0033e77f84c'
   license :freemium
 
   app 'iExplorer.app'
