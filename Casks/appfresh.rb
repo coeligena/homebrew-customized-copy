@@ -6,9 +6,18 @@ cask :v1 => 'appfresh' do
   name 'AppFresh'
   appcast 'http://backend.metaquark.de/appcast/appfresh.xml'
   homepage 'http://metaquark.de/appfresh/mac'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :commercial
+  tags :vendor => 'metaquark'
 
   app 'appfresh.app'
+
+  zap :delete => [
+    '~/Library/Application Support/AppFresh',
+    '~/Library/Application Support/Growl/Tickets/AppFresh.growlTicket',
+    '~/Library/Caches/de.metaquark.appfresh',
+    '~/Preferences/de.metaquark.appfresh.plist',
+    '~/Library/Saved Application State/de.metaquark.appfresh.savedState'
+  ]
 
   postflight do
     system 'tag', '-a', "Purple", "#{staged_path}/AppFresh.app"
