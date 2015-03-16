@@ -6,6 +6,7 @@ cask :v1 => 'adobe-reader' do
 	name 'Adobe Reader'
     homepage 'http://www.adobe.com/products/reader.html'
     license :gratis
+  tags :vendor => 'Adobe'
     
     preflight do
         File.open('/tmp/adobe-reader-choices.xml', 'w') do |f|

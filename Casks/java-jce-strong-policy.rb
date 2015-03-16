@@ -29,13 +29,13 @@ cask :v1 => 'java-jce-strong-policy' do
     system '/usr/bin/sudo', '-E', '--',
         '/bin/ln', '-sf', "#{staged_path}/UnlimitedJCEPolicyJDK8/US_export_policy.jar", '/Library/Java/Home/jre/lib/security/US_export_policy.jar'
     system '/usr/bin/sudo', '-E', '--', 
-      '/bin/chown', '--', 'root:wheel', '/Library/Java/Home/jre/lib/security/local_policy.jar'
+      'chown', '--', 'root:wheel', '/Library/Java/Home/jre/lib/security/local_policy.jar'
     system '/usr/bin/sudo', '-E', '--', 
-      '/bin/chown', '--', 'root:wheel', '/Library/Java/Home/jre/lib/security/US_export_policy.jar'
+      'chown', '--', 'root:wheel', '/Library/Java/Home/jre/lib/security/US_export_policy.jar'
     system '/usr/bin/sudo', '-E', '--', 
-      '/bin/chmod', '-h', 'a+r-x,ug+w,o-w', '/Library/Java/Home/jre/lib/security/local_policy.jar'
+      'chmod', '--', 'a+r-x,ug+w,o-w', '/Library/Java/Home/jre/lib/security/local_policy.jar'
     system '/usr/bin/sudo', '-E', '--', 
-      '/bin/chmod', '-h', 'a+r-x,ug+w,o-w', '/Library/Java/Home/jre/lib/security/US_export_policy.jar'
+      'chmod', '--', 'a+r-x,ug+w,o-w', '/Library/Java/Home/jre/lib/security/US_export_policy.jar'
   end
   
   uninstall :delete => [
@@ -44,9 +44,13 @@ cask :v1 => 'java-jce-strong-policy' do
     ]
   
   uninstall_postflight do
-    system '/usr/bin/sudo', '-E', '--',
-      '/bin/mv', '/Library/Java/Home/jre/lib/security/local_policy.jar.backed_up', '/Library/Java/Home/jre/lib/security/local_policy.jar'
-    system '/usr/bin/sudo', '-E', '--',
-      '/bin/mv', '/Library/Java/Home/jre/lib/security/US_export_policy.jar.backed_up', '/Library/Java/Home/jre/lib/security/US_export_policy.jar'
+    if Pathname('/Library/Java/Home/jre/lib/security/local_policy.jar.backed_up').exist?
+      system '/usr/bin/sudo', '-E', '--',
+        '/bin/mv', '-f', '/Library/Java/Home/jre/lib/security/local_policy.jar.backed_up', '/Library/Java/Home/jre/lib/security/local_policy.jar'
+    end
+    if Pathname('/Library/Java/Home/jre/lib/security/US_export_policy.jar.backed_up').exist?
+      system '/usr/bin/sudo', '-E', '--',
+        '/bin/mv', '-f', '/Library/Java/Home/jre/lib/security/US_export_policy.jar.backed_up', '/Library/Java/Home/jre/lib/security/US_export_policy.jar'
+    end
   end
 end
