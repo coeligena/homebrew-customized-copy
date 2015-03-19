@@ -2,6 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/caskroom/homebrew-cask/master.svg)](https://travis-ci.org/caskroom/homebrew-cask)
 [![Code Climate](https://img.shields.io/codeclimate/github/caskroom/homebrew-cask.svg)](https://codeclimate.com/github/caskroom/homebrew-cask)
+[![Coverage Status](https://img.shields.io/coveralls/caskroom/homebrew-cask.svg)](https://coveralls.io/r/caskroom/homebrew-cask)
 
 
 Let's see if we can get the elegance, simplicity, and speed of Homebrew for the
@@ -42,7 +43,7 @@ We're really rather friendly! Here are the best places to talk about the project
 ## Reporting Bugs
 
 We still have bugs -- and we are busy fixing them!  If you have a problem, don't
-be shy about reporting it on our [GitHub issues page](https://github.com/caskroom/homebrew-cask/issues?state=open).
+be shy about reporting it on our [GitHub issues page](https://github.com/caskroom/homebrew-cask/issues?state=open). Always search for your issue before posting a new one.
 
 When reporting bugs, remember that homebrew-cask is an independent project from
 Homebrew.  Do your best to direct bug reports to the appropriate project.  If

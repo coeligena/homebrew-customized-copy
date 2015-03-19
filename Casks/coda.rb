@@ -5,7 +5,8 @@ cask :v1 => 'coda' do
   homepage '2.5.5'
   url "http://localhost:8000/Development/Coda/Coda-#{homepage}.dmg"
   appcast 'http://www.panic.com/updates/update.php'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  name 'Coda'
+  license :commercial
 
   app 'Coda 2.app'
 
