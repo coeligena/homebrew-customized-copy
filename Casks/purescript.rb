@@ -1,9 +1,10 @@
 cask :v1 => 'purescript' do
-  version '0.6.8'
-  sha256 'a5ab60c44cb90cca7b4966eb15d71c179e37ecc18e4df2698b177067404d8971'
+  version '0.6.9.3'
+  sha256 '9dfa8d93f9000718e8c77d0e5abd1a353a47b12acae8482626f22ece43e1dede'
 
   # github.com is the official download host per the vendor homepage
   url "https://github.com/purescript/purescript/releases/download/v#{version}/macos.tar.gz"
+  appcast 'https://github.com/purescript/purescript/releases.atom'
   name 'PureScript'
   homepage 'http://purescript.org'
   license :mit
