@@ -1,6 +1,6 @@
 cask :v1 => 'flip4mac' do
-  version '3.3.3'
-  sha256 '2ef87c50b2f767231f1b56e2e3d6486b2b6bd963a9c71711fcd84e3abd92bad6'
+  version '3.3.4'
+  sha256 'f96e824a9bbc30e82be8f593b3ecf50586a3a68ac6e753db1388106d2dc04c97'
 
   url "http://www.telestream.net/download-files/flip4mac/#{version.sub(%r{\.\d+$},'').sub('.','-')}/Flip4Mac-#{version}.dmg"
   name 'Flip4Mac'
