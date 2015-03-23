@@ -2,7 +2,7 @@ cask :v1 => 'coda' do
   version :latest
   sha256 :no_check
   
-  homepage '2.5.5'
+  homepage '2.5.7'
   url "http://localhost:8000/Development/Coda/Coda-#{homepage}.dmg"
   appcast 'http://www.panic.com/updates/update.php'
   name 'Coda'
