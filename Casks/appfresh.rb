@@ -11,6 +11,8 @@ cask :v1 => 'appfresh' do
 
   app 'appfresh.app'
 
+  uninstall :launchctl => 'de.metaquark.appfresh'
+
   zap :delete => [
     '~/Library/Application Support/AppFresh',
     '~/Library/Application Support/Growl/Tickets/AppFresh.growlTicket',
