@@ -4,7 +4,7 @@ cask :v1 => 'dash' do
 
   homepage '2.2.3'
   url "http://localhost:8000/Development/Dash/Dash.#{homepage}.zip"
-  appcast 'http://kapeli.com/Dash.xml'
+  appcast 'https://kapeli.com/Dash.xml'
   name 'Dash'
   license :commercial
 
@@ -16,7 +16,7 @@ cask :v1 => 'dash' do
   end
 
   zap :delete => [
-                  '~/Library/Application Support/Dash/library.dash',
+                  '~/Library/Application Support/Dash',
                   '~/Library/Preferences/com.kapeli.dash.plist',
                  ]
 end

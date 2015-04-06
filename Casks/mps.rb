@@ -1,29 +1,12 @@
 cask :v1 => 'mps' do
-  version '3.1.5'
-  sha256 '68dd55b0542ddb82fe941d465f41b035730c77849c6b13b93f07e5d7091bfb8c'
+  version '3.2'
+  sha256 '1e015f575ad740a0f5849e2d511ac8e82a1656ceeded5b06cb2b7f3fb542b3ca'
 
-  url "http://download.jetbrains.com/mps/#{version.sub(%r{^(\d+)\.(\d).*},'\1\2')}/MPS-#{version}-macos.dmg"
-  homepage 'https://www.jetbrains.com/mps/'
-  license :oss
+  url "http://download-cf.jetbrains.com/mps/#{version.tr('.','')}/MPS-#{version}-macos.dmg"
+  name 'MPS'
+  name 'JetBrains MPS'
+  homepage 'https://www.jetbrains.com/mps'
+  license :apache
 
-  app "MPS #{version.sub(%r{^(\d+)\.(\d).*},'\1.\2')}.app"
-
-  postflight do
-    plist_set(':JVMOptions:JVMVersion', '1.6+')
-  end
-
-  zap :delete => [
-                  "~/Library/Application Support/MPS#{version.sub(%r{^(\d+)\.(\d).*},'\1\2')}",
-                  "~/Library/Preferences/MPS#{version.sub(%r{^(\d+)\.(\d).*},'\1\2')}",
-                  "~/Library/Caches/MPS#{version.sub(%r{^(\d+)\.(\d).*},'\1\2')}",
-                  "~/Library/Logs/MPS#{version.sub(%r{^(\d+)\.(\d).*},'\1\2')}",
-                 ]
-
-  caveats <<-EOS.undent
-    #{token} may require Java 7 (an older version), available from the
-    caskroom-versions repository via
-      brew cask install caskroom/versions/java7
-    Alternatively, #{token} can be modified to use Java 8 as described in
-      https://github.com/caskroom/homebrew-cask/issues/4500#issuecomment-43955932
-  EOS
+  app "MPS #{version}.app"
 end
