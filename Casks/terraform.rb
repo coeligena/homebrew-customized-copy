@@ -1,6 +1,6 @@
 cask :v1 => 'terraform' do
-  version '0.4.0'
-  sha256 'eba9a10b11d572bc5146c1d01353193ba45af2683a0977db09e7b18dff079398'
+  version '0.4.2'
+  sha256 '317e2b9721394c1f6cc6710f13598cd91e8816b82fdc3781485556cadf1311dd'
 
   # bintray.com is the official download host per the vendor homepage
   url "https://dl.bintray.com/mitchellh/terraform/terraform_#{version}_darwin_amd64.zip"
