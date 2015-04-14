@@ -10,6 +10,8 @@ cask :v1 => 'bartender' do
   license :commercial
 
   app 'Bartender.app'
+  
+  container :nested => 'Bartender.zip'
 
   postflight do
     system 'tag', '-a', 'Purple', "#{staged_path}/Bartender.app"
