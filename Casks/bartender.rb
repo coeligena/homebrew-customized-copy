@@ -2,8 +2,8 @@ cask :v1 => 'bartender' do
   version :latest
   sha256 :no_check
 
-  homepage '1.2.35'
-  url "http://localhost:8000/Tools%20%26%20Utilities/Bartender/Bartender-#{homepage}.zip"
+  homepage '1.2.37'
+  url "http://localhost:8000/Tools%20%26%20Utilities/Bartender/Bartender-#{homepage}.dmg"
   name 'Bartender'
   appcast 'http://www.macbartender.com/updates/Appcast.xml',
           :sha256 => 'cb01076d5f91bf81f8b3074c5bc205f74b55e81ee880b756a2898057a2ffc953'
