@@ -9,7 +9,7 @@ cask :v1 => 'java7-jce-strong-policy' do
     end
   end
 
-  url 'https://edelivery.oracle.com/otn-pub/java/jce/7/UnlimitedJCEPolicy7.zip',
+  url 'https://edelivery.oracle.com/otn-pub/java/jce/7/UnlimitedJCEPolicyJDK7.zip',
       :cookies => {
                     'oraclelicense' => 'accept-securebackup-cookie'
                   }
@@ -36,9 +36,9 @@ cask :v1 => 'java7-jce-strong-policy' do
     system '/usr/bin/sudo', '-E', '--',
         '/bin/ln', '-sf', "#{staged_path}/UnlimitedJCEPolicy/US_export_policy.jar", "/Library/Java/JavaVirtualMachines/#{Utils.java_dir}/Contents/Home/jre/lib/security/US_export_policy.jar"
     system '/usr/bin/sudo', '-E', '--', 
-      '/bin/chown', '--', 'root:wheel', "/Library/Java/JavaVirtualMachines/#{Utils.java_dir}/Contents/Home/jre/lib/security/local_policy.jar"
+      '/usr/sbin/chown', '--', 'root:wheel', "/Library/Java/JavaVirtualMachines/#{Utils.java_dir}/Contents/Home/jre/lib/security/local_policy.jar"
     system '/usr/bin/sudo', '-E', '--', 
-      '/bin/chown', '--', 'root:wheel', "/Library/Java/JavaVirtualMachines/#{Utils.java_dir}/Contents/Home/jre/lib/security/US_export_policy.jar"
+      '/usr/sbin/chown', '--', 'root:wheel', "/Library/Java/JavaVirtualMachines/#{Utils.java_dir}/Contents/Home/jre/lib/security/US_export_policy.jar"
     system '/usr/bin/sudo', '-E', '--', 
       '/bin/chmod', '-h', 'a+r-x,ug+w,o-w', "/Library/Java/JavaVirtualMachines/#{Utils.java_dir}/Contents/Home/jre/lib/security/local_policy.jar"
     system '/usr/bin/sudo', '-E', '--', 
