@@ -5,7 +5,8 @@ cask :v1 => 'alfred' do
   homepage '2.7.1_387'
   url "http://localhost:8000/Tools%20%26%20Utilities/Alfred/Alfred-#{homepage}.zip"
   name 'Alfred'
-  license :commercial
+  homepage 'http://www.alfredapp.com/'
+  license :freemium
 
   app 'Alfred 2.app'
   app 'Alfred 2.app/Contents/Preferences/Alfred Preferences.app'
