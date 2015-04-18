@@ -2,7 +2,7 @@ cask :v1 => 'alfred' do
   version :latest
   sha256 :no_check
 
-  homepage '2.7_385'
+  homepage '2.7.1_387'
   url "http://localhost:8000/Tools%20%26%20Utilities/Alfred/Alfred-#{homepage}.zip"
   name 'Alfred'
   license :commercial
