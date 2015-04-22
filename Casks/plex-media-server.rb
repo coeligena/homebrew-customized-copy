@@ -8,6 +8,7 @@ cask :v1 => 'plex-media-server' do
 >>>>>>> caskroom/homebrew-cask/master
 
   url "https://downloads.plex.tv/plex-media-server/#{version}/PlexMediaServer-#{version}-OSX.zip"
+  name 'Plex Media Server'
   homepage 'https://plex.tv/'
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
