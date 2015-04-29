@@ -7,7 +7,7 @@ cask :v1 => '1password' do
   name '1Password'
   license :commercial
 
-  app '1Password.app'
+  app "1Password #{version.to_i}.app"
 
   postflight do
     system 'tag', '-a', 'Purple', "#{staged_path}/1Password.app"

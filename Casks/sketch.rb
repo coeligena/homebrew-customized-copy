@@ -5,7 +5,9 @@ cask :v1 => 'sketch' do
   homepage '3.2.2'
   url "http://localhost:8000/Design%2C%20Photo%20%26%20Video%20Tools%20%26%20Editors/Sketch/Sketch-#{homepage}.dmg"
   appcast 'http://www.bohemiancoding.com/sketch/appcast.xml'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  name 'Sketch'
+  homepage 'http://www.bohemiancoding.com/sketch/'
+  license :commercial
 
   app 'Sketch.app'
   
