@@ -1,8 +1,8 @@
 cask :v1 => 'myspeed' do
   #    version '1153' # 1.43
   #    sha256 '22a77eaf5fec64e3055bc68f5287b9d2d94a0c34abc83e5948d0ff591c8cf7f5'
-  version '6315' # 6 Beta
-  sha256 '0786abfc7e47644006e57b5148f1d061f2c8ba21d1fecd50c5d0bcbbe7b40032'
+  version '6318' # 6 Beta
+  sha256 '40c0e8b608174da8890d3722053a2cc29bae94d4065558675611b8ab33b1719e'
   
   url "https://www.enounce.com/downloads/#{version}/EnounceMySpeed.dmg"
   homepage 'https://www.enounce.com/myspeed1-mac-download'
