@@ -1,7 +1,7 @@
 cask :v1 => 'bitshares' do
-  version '0.4.26'
-  sha256 '6f80d2f42b0bf7302e1c544396afec69450116875a73f5a78755bf907ed3a008'
-  url "http://bitshares.org/download/client/BitShares-v#{version}.dmg"
+  version '0.9.1'
+  sha256 'f276d2b5367e7b1937c5894aa9c58e99a9311098691eef1881e4e41697fee7ad'
+  url "https://bitshares.org/binaries/BitShares-#{version}.dmg"
   
   homepage 'http://bitshares.org/'
   license :oss
