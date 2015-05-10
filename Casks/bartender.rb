@@ -19,8 +19,11 @@ cask :v1 => 'bartender' do
     suppress_move_to_applications
   end
 
-  zap :delete => '~/Library/Preferences/com.surteesstudios.Bartender.plist'
-  
+  zap :delete => [
+                  '/Library/ScriptingAdditions/BartenderHelper.osax',
+                  '~/Library/Preferences/com.surteesstudios.Bartender.plist'
+  ]
+
   caveats <<-EOS.undent
     DO MORE...
   EOS
