@@ -4,7 +4,7 @@ cask :v1 => 'fantastical' do
 
   url "https://flexibits.com/fantastical/download"
   appcast 'https://flexibits.com/fantastical/appcast.php',
-  sha256 '4e7618a823f870c058db179e41cdae0f5f5e9b157a4a70fd9c2c8e4c18ab7d3d'
+  sha256 '398c3189f1bb08c44a968559b1f7d4c4bda33c15f3b095904e999e2d37b33ea1'
   name 'Fantastical'
   homepage 'https://flexibits.com/fantastical'
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
