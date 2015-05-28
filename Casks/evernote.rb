@@ -6,7 +6,7 @@ cask :v1 => 'evernote' do
     url 'https://cdn1.evernote.com/mac/release/Evernote_402634.dmg'
   else
     version :latest
-    sha256 'ca08dcda10cecc58abe492df93c29470eebe74ddae9e1d8e2c002ffad0ed19c5'
+    sha256 'a75bdcdf4dbb755798291f4d63be6d55b975080e19b4f45a52889dfb4f057eba'
     url "https://evernote.com/download/get.php?file=EvernoteMac"
     appcast 'https://update.evernote.com/public/ENMac/EvernoteMacUpdate.xml'
   end
