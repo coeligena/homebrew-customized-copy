@@ -13,7 +13,7 @@ cask :v1 => 'launchbar' do
   end
 
   name 'LaunchBar'
-  homepage 'http://www.obdev.at/products/launchbar/'
+  homepage 'https://www.obdev.at/products/launchbar/'
   license :commercial
 
   app 'LaunchBar.app'

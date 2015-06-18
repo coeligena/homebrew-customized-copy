@@ -5,7 +5,7 @@ cask :v1 => 'kaleidoscope' do
   homepage '2.1.0'
   url "http://localhost:8000/Development/Kaleidoscope/Kaleidoscope%20#{homepage}.zip"
   appcast 'https://updates.blackpixel.com/updates?app=ks',
-          :sha256 => '80eafc0b115e6f9ad4ec0cdec87809f21a3fc7ff1c540722f74d86dad64da158'
+          :sha256 => '0c1806533b06d08715959141f202ccf2bc30a12637dd71eef70c2552b6f18b09'
   name 'Kaleidoscope'
   license :commercial
 

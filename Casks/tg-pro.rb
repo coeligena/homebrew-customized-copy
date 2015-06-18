@@ -1,6 +1,6 @@
 cask :v1 => 'tg-pro' do
-  version '2.7.2'
-  sha256 '6708a9762a62d30e2e83b37cd6c7597d0650e239b5b0f104ef85e5aa25f0c880'
+  version '2.7.4'
+  sha256 '94df19f67316c900929542445d7d0b86a97c6605bb353b492b12306663d0cd58'
 
   url "http://www.tunabellysoftware.com/resources/TGPro_#{version.gsub('.','_')}.zip"
   name 'TG Pro'

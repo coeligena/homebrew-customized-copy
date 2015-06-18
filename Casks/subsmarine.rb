@@ -1,6 +1,6 @@
 cask :v1 => 'subsmarine' do
-  version '1.2.1'
-  sha256 '303115700d6dd8d925a3b7d0bef81f87a217aba1696f0b346c94eb2a54bba3d0'
+  version '1.2.2'
+  sha256 'b6533f4fa1f3d477a7474a7c5f3baeb8c0c06b8da0d83ca8acddd138cfd1aeb1'
 
   url "http://www.cocoawithchurros.com/downloads/SubsMarine.#{version}.zip"
   appcast 'http://www.cocoawithchurros.com/shine/appcast.php?id=7',

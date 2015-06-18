@@ -1,17 +1,10 @@
 cask :v1 => 'fantastical' do
-  version :latest
-  sha256 :no_check
-
-  url "https://flexibits.com/fantastical/download"
-  appcast 'https://flexibits.com/fantastical/appcast.php',
-  sha256 '398c3189f1bb08c44a968559b1f7d4c4bda33c15f3b095904e999e2d37b33ea1'
-  name 'Fantastical'
-  homepage 'https://flexibits.com/fantastical'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  version '2.0.7'
+  sha256 '25ae43ca4f9285a487bdc2eb43b348a9fa9f9c09bb2ac0a80380a114b9040888'
 
   url "http://cdn.flexibits.com/Fantastical_#{version}.zip"
   appcast 'https://flexibits.com/fantastical/appcast2.php',
-          :sha256 => '25b925b46633c66b6d10dda0f213614da63da9c80a231dc39c8ffb86e8b883e4'
+          :sha256 => '3634a59497cc6131cbadc25e1b6b90d7d5576e6a563c272cca462b92111c7a60'
   name 'Fantastical'
   homepage 'https://flexibits.com/fantastical'
   license :freemium
