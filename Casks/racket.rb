@@ -31,5 +31,4 @@ cask :v1 => 'racket' do
   binary "Racket v#{version}/bin/slatex"
   binary "Racket v#{version}/bin/slideshow"
   binary "Racket v#{version}/bin/swindle"
->>>>>>> caskroom/homebrew-cask/master
 end
