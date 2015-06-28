@@ -5,7 +5,7 @@ cask :v1 => 'dnscrypt' do
   url "https://github.com/alterstep/dnscrypt-osxclient/releases/download/#{version}/dnscrypt-osxclient-#{version}.dmg"
   appcast 'https://github.com/alterstep/dnscrypt-osxclient/releases.atom'
   name 'DNSCrypt'
-  homepage 'https://opendns.github.io/dnscrypt-osx-client/'
+  homepage 'https://github.com/alterstep/dnscrypt-osxclient'
   license :oss
   
   pkg 'DNSCrypt.pkg'
