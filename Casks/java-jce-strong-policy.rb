@@ -56,7 +56,7 @@ cask :v1 => 'java-jce-strong-policy' do
   
   uninstall :delete => [
       '/Library/Java/Home/jre/lib/security/local_policy.jar',
-      '/Library/Java/Home/jre/lib/security/US_export_policy.jar'
+      '/Library/Java/Home/jre/lib/security/US_export_policy.jar',
       '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/local_policy.jar',
       '/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/security/US_export_policy.jar'
     ]
