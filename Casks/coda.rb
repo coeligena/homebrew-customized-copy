@@ -4,7 +4,6 @@ cask :v1 => 'coda' do
   
   homepage '2.5.7'
   url "http://localhost:8000/Development/Coda/Coda-#{homepage}.dmg"
-  appcast 'http://www.panic.com/updates/update.php'
   name 'Coda'
   license :commercial
   tags :vendor => 'Panic'

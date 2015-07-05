@@ -5,8 +5,9 @@ cask :v1 => 'kindle-previewer' do
   # amazonaws.com is the official download host per the vendor homepage
   url 'https://kindlepreviewer.s3.amazonaws.com/KindlePreviewer.zip'
   name 'Kindle Previewer'
-  homepage 'http://www.amazon.com/gp/feature.html/?docId=1000765261'
+  homepage 'https://www.amazon.com/gp/feature.html/?docId=1000765261'
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
-  app 'Kindle Previewer.app'
+  pkg 'Kindle Previewer.pkg'
+  uninstall :pkgutil => 'Amazon.Kindle.Previewer.pkg'
 end

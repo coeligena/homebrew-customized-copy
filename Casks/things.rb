@@ -4,7 +4,7 @@ cask :v1 => 'things' do
 
   homepage '2.5.3'
   url "http://localhost:8000/Office%2C%20Productivity%20%26%20Planning/Things/Things_#{version}.zip"
-  appcast 'http://downloads.culturedcode.com/things/download/Things_Updates.php'
+  appcast 'https://downloads.culturedcode.com/things/download/Things_Updates.php'
   name 'Things'
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 

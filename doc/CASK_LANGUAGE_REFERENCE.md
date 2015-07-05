@@ -38,16 +38,20 @@ definition itself is always enclosed in a `do ... end` block.  Example:
 
 ```ruby
 cask :v1 => 'alfred' do
-  version '2.3_264'
-  sha256 'a32565cdb1673f4071593d4cc9e1c26bc884218b62fef8abc450daa47ba8fa92'
+  version '2.7.1_387'
+  sha256 'a3738d0513d736918a6d71535ef3d85dd184af267c05698e49ac4c6b48f38e17'
 
-  url 'https://cachefly.alfredapp.com/Alfred_2.3_264.zip'
+  url "https://cachefly.alfredapp.com/Alfred_#{version}.zip"
   name 'Alfred'
   homepage 'http://www.alfredapp.com/'
   license :freemium
 
   app 'Alfred 2.app'
   app 'Alfred 2.app/Contents/Preferences/Alfred Preferences.app'
+
+  postflight do
+    suppress_move_to_applications :key => 'suppressMoveToApplications'
+  end
 end
 ```
 
@@ -150,7 +154,7 @@ if MacOS.release <= :mavericks     # symbolic name
 if MacOS.release <= '10.9'         # version string
 ```
 
-The available symbols for OS X versions are: `:tiger`, `:leopard`,
+The available symbols for OS X versions are: `:cheetah`, `:puma`, `:jaguar`, `:panther`, `:tiger`, `:leopard`,
 `:snow_leopard`, `:lion`, `:mountain_lion`, `:mavericks`, `:yosemite`, and `:el_capitan`.
 The corresponding numeric version strings should given as major releases
 containing a single dot.
@@ -608,6 +612,10 @@ The available values for OS X releases are:
 
 | symbol             | corresponding string
 | -------------------|----------------------
+| `:cheetah`         | `'10.0'`
+| `:puma`            | `'10.1'`
+| `:jaguar`          | `'10.2'`
+| `:panther`         | `'10.3'`
 | `:tiger`           | `'10.4'`
 | `:leopard`         | `'10.5'`
 | `:snow_leopard`    | `'10.6'`
@@ -615,6 +623,7 @@ The available values for OS X releases are:
 | `:mountain_lion`   | `'10.8'`
 | `:mavericks`       | `'10.9'`
 | `:yosemite`        | `'10.10'`
+| `:el_capitan`      | `'10.11'`
 
 Only major releases are covered (version numbers containing a single dot).
 The symbol form is preferred for readability.  The following are all valid
