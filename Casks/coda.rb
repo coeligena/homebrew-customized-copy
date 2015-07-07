@@ -21,6 +21,8 @@ cask :v1 => 'coda' do
     '~/Library/Saved Application State/com.panic.Coda2.savedState'
                  ]
 
+  depends_on :macos => '>= :lion'
+
    postflight do
      system 'tag', '-a', 'Purple', "#{staged_path}/Coda 2.app"
    end
