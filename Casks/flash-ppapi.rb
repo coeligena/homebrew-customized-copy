@@ -1,6 +1,6 @@
 cask :v1 => 'flash-ppapi' do
-  version '18.0.0.194'
-  sha256 '16af0fb0d8722d2c8dde24bdc967fe13c252e772d90fdf051cf763c90ef45a78'
+  version '18.0.0.203'
+  sha256 '6a30295b841c4e813cffbf8d995b20737a4fa2b4a4ca6cbc78cbfa2e637a0181'
 
   # macromedia.com is the official download host per the vendor homepage
   url "https://fpdownload.macromedia.com/get/flashplayer/pdc/#{version}/install_flash_player_osx_ppapi.dmg"

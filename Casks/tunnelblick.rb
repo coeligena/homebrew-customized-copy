@@ -1,6 +1,6 @@
 cask :v1 => 'tunnelblick' do
-  version '3.5.3_build_4270.4371'
-  sha256 'd12547df269065a845277f700fca1127763b3e1f2139e992fa114e49b3094d64'
+  version '3.6beta08_build_4371'
+  sha256 '141b3cd3a4595a608e0a41be245dd67a80d531a3bcc717b97ab49a0e9d07f360'
 
   # sourceforge.net is the official download host per the vendor homepage
   url "http://downloads.sourceforge.net/project/tunnelblick/All%20files/Tunnelblick_#{version}.dmg"
