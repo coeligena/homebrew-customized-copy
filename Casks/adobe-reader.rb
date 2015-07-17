@@ -1,6 +1,6 @@
 cask :v1 => 'adobe-reader' do
-  version '2015.007.20033'
-  sha256 '46703ba27599512223e9b89c308075a0ddb625287be8e22a87574dfc70a77eb5'
+  version '2015.008.20082'
+  sha256 'bff60679ff22e97addc4d6cb7baa60276e076fa6e1501289e2f89eddbf5f34a8'
     
   url "http://ardownload.adobe.com/pub/adobe/reader/mac/AcrobatDC/#{version.gsub('.', '')[2..-1]}/AcroRdrDC_#{version.gsub('.', '')[2..-1]}_MUI.dmg"
   name 'Adobe Acrobat Reader DC'
@@ -10,12 +10,12 @@ cask :v1 => 'adobe-reader' do
 
   depends_on :macos => '>= 10.9'
 
-  pkg "AcroRdrDC_#{version.gsub('.', '')[2..-1]}_MUI.pkg"
-    
+  pkg "AcroRdrDC_#{version.gsub('.', '')[2..-1]}_MUI.pkg", :apply_choice_changes_xml => '/tmp/adobe-reader-choices.xml'
+  
   preflight do
-        File.open('/tmp/adobe-reader-choices.xml', 'w') do |f|
-            # use "\n" for two lines of text
-            f.puts %Q{<?xml version="1.0" encoding="UTF-8"?>
+    File.open('/tmp/adobe-reader-choices.xml', 'w') do |f|
+        # use "\n" for two lines of text
+        f.puts %Q{<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
     <array>
@@ -93,10 +93,9 @@ cask :v1 => 'adobe-reader' do
     </dict>
     </array>
 </plist>}
-        end
-    end
-    pkg 'Adobe Reader XI Installer.pkg', :apply_choice_changes_xml => '/tmp/adobe-reader-choices.xml'
-
+      end
+  end
+  
   uninstall :pkgutil => 'com.adobe.acrobat.DC.reader.*',
             :delete => '/Applications/Adobe Acrobat Reader DC.app'
   zap       :delete => [
