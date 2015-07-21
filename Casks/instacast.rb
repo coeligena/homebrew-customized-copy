@@ -11,13 +11,7 @@ cask :v1 => 'instacast' do
 
   app 'Instacast.app'
 
-  postflight do
-    system 'tag', '-a', 'Purple', "#{staged_path}/Instacast.app"
-    system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Internet, Networking & Basic Tools/Instacast/"
-    suppress_move_to_applications :key => 'suppressMoveToApplications'
+  caveats do
+    discontinued
   end
-  
-  caveats <<-EOS.undent
-    DO MORE...
-  EOS
 end

@@ -3,8 +3,8 @@ cask :v1 => 'coteditor' do
     version '2.0.3'
     sha256 'b656aa0b6526c89d7d52cf12b715cf529f8e5048c7e13720673c3e32318a26d8'
   elsif MacOS.release >= :mountain_lion
-    version '2.1.3'
-    sha256 '2603504a15dc90e228a8758f1cc960b5e44658d6ac27e96046a91682b3d765b7'
+    version '2.1.6'
+    sha256 'a42f6c4d706ffb4dc00610c209ea449d18eafcc916a9b9c299febdcda8ca9c4d'
   end
 
   # github.com is the official download host per the vendor homepage
