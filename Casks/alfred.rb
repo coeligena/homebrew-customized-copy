@@ -16,7 +16,18 @@ cask :v1 => 'alfred' do
     system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Tools & Utilities/Alfred/"
     suppress_move_to_applications :key => 'suppressMoveToApplications'
   end
+
+  uninstall :quit => 'com.runningwithcrayons.Alfred-2'
   
+  zap :delete => [
+                  '~/Library/Application Support/Alfred 2',
+                  '~/Library/Caches/com.runningwithcrayons.Alfred-2',
+                  '~/Library/Caches/com.runningwithcrayons.Alfred-Preferences',
+                  '~/Library/Preferences/com.runningwithcrayons.Alfred-2.plist',
+                  '~/Library/Preferences/com.runningwithcrayons.Alfred-Preferences.plist',
+                  '~/Library/Saved Application State/com.runningwithcrayons.Alfred-Preferences.savedState'
+                 ]
+
   caveats <<-EOS.undent
     DO MORE...
   EOS
