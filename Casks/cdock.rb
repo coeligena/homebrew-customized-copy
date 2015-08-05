@@ -1,10 +1,10 @@
 cask :v1 => 'cdock' do
-  version '9.0'
-  sha256 '434ace68c426ee454e1a4fef093aa6b467d5348eed1ece8f569b5cbe33eee288'
+  version '9.3.1'
+  sha256 '906ed8961c0fc80860d58722be43a2ff82b1f5e0e2d9cb17bceadbf11e0d6369'
 
   url "https://github.com/w0lfschild/cDock/releases/download/v#{version}/cDock_v#{version}.zip"
   appcast 'https://github.com/w0lfschild/cDock/releases.atom',
-          :sha256 => 'fe2fdc1f4b485967d3725273bea4e21d1d121da7e686ed63392233e884b385c7'
+          :sha256 => '48155cef78a6bd987d2c2a3d7b1a82cc5a8582aff895edfe28fda29964cfcafa'
   name 'cDock'
   homepage 'http://w0lfschild.github.io/pages/cdock.html'
   license :bsd
