@@ -9,5 +9,5 @@ cask :v1 => 'img2icns' do
   homepage 'http://www.img2icnsapp.com/'
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
-  app 'Img2icns.app'
+  app 'Image2icon.app'
 end
