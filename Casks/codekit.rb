@@ -1,6 +1,6 @@
 cask :v1 => 'codekit' do
-  version '2.3.10-19033'
-  sha256 '6ace696b81de91d7f5d2b24cb27a6609a72aeadc2d36fb6cda56af2b768b34c8'
+  version '2.4-19051'
+  sha256 '358c185cd0c124679ddacc7e941e1bfe9ed80dd3120ec5552ac64cf2ebfcd6f5'
 
   url "https://incident57.com/codekit/files/codekit-#{version.sub(%r{.*-},'')}.zip"
   appcast 'https://incident57.com/codekit/appcast/ck2appcast.xml',
