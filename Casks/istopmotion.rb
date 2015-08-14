@@ -7,5 +7,5 @@ cask :v1 => 'istopmotion' do
   homepage 'https://www.boinx.com/istopmotion/mac/'
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
-  app 'iStopMotion 3.app'
+  app 'iStopMotion.app'
 end
