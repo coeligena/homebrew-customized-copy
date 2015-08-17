@@ -10,6 +10,8 @@ cask :v1 => 'disk-drill' do
 
   app 'Disk Drill.app'
 
+  uninstall :delete => '/Library/Application Support/CleverFiles'
+
   zap :delete => [
                   '~/Library/Application Support/DiskDrill',
                   '~/Library/Caches/com.cleverfiles.Disk_Drill',

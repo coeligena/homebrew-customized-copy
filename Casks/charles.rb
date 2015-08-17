@@ -6,7 +6,7 @@ cask :v1 => 'charles' do
   url "http://localhost:8000/Development/Charles%20Proxy/charles-proxy-#{homepage}-openjdk.dmg"
   name 'Charles'
   homepage 'http://www.charlesproxy.com/'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  license :commercial
 
   app 'Charles.app'
 
