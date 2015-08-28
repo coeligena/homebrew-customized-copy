@@ -6,9 +6,11 @@ cask :v1 => 'imazing' do
   url "https://dl.devmate.com/com.DigiDNA.iMazingMac/iMazingforMac.dmg"
   name 'iMazing'
   appcast 'http://updates.devmate.com/com.DigiDNA.iMazingMac.xml',
-          :sha256 => 'b5ff3d4d493f31ce59b7f6803dd7407e84128a0ed71681130ba90e86cd2e93e3'
+          :sha256 => '097749ec17809265704df2aa4d7eb2fc936a7bab9f89e497dd79877812131dc9'
   homepage 'https://imazing.com/'
   license :commercial
 
   app 'iMazing.app'
+
+  depends_on :macos => '>= :lion'
 end

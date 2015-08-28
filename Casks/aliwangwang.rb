@@ -1,9 +1,9 @@
 cask :v1 => 'aliwangwang' do
-  version '3.2.0-3714'
-  sha256 '66c85b4efbc2576d6c3a5a03b0b7a6ae1e6758d083c2547d854c489e00c03dc2'
+  version '3.4.1-4131'
+  sha256 '02c8b69acf799715537ca88fc2621db292144b2294a695b2e3af48b81266f7ee'
 
   # alicdn.com is the official download host per the vendor homepage
-  url "https://dbison.alicdn.com/updates/macww-#{version}.dmg"
+  url "https://dbison.alicdn.com/updates/macww-nosandbox-#{version}.dmg"
   name 'Ali Wangwang'
   appcast 'http://update.labs.etao.com/macww/updates.xml'
   homepage 'http://wangwang.taobao.com'
