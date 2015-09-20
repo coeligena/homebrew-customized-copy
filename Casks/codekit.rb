@@ -4,7 +4,7 @@ cask :v1 => 'codekit' do
 
   url "https://incident57.com/codekit/files/codekit-#{version.sub(%r{.*-},'')}.zip"
   appcast 'https://incident57.com/codekit/appcast/ck2appcast.xml',
-          :sha256 => 'fba4e9552ebabca2b700f6bdcdbb83132856d6c467f536250fc34beed9a8f104'
+          :sha256 => '2bd6ea91ec93ad5667a21bf7ccf12039270e811d352bacbc55c9e74868262cc6'
   name 'CodeKit'
   homepage 'https://incident57.com/codekit/'
   license :commercial
