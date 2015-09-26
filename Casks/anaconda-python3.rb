@@ -18,10 +18,10 @@ cask :v1 => 'anaconda-python3' do
             :args => [ '-b' ],
             :sudo => false
 
-  uninstall :delete => '~/anaconda'
+  uninstall :delete => '~/anaconda3'
 
   caveats do
-    path_environment_variable '~/anaconda/bin'
+    path_environment_variable '~/anaconda3/bin'
   end
 
   depends_on :macos => '>= :lion'
