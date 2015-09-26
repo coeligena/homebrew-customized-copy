@@ -59,7 +59,7 @@ cask :v1 => 'cleanmymac' do
   postflight do
     system 'tag', '-a', 'Purple', "#{staged_path}/CleanMyMac 3.app"
     system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Cleaners & Maintenance/CleanMyMac 3/"
-    suppress_move_to_applications :key => 'suppressMoveToApplications'
+    suppress_move_to_applications
   end
   
   caveats <<-EOS.undent
