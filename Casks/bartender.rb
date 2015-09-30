@@ -1,28 +1,27 @@
 cask :v1 => 'bartender' do
-  version :latest
-  sha256 :no_check
+  version '2.0.207'
+  sha256 '0a5cb9c1119cb371d9f3ccd1b29c0ad7802e8535152731b13e9c33a023313e08'
 
-  homepage '1.2.37'
-  url "http://macbartender.com/updates/#{version.gsub('.', '-')}/Bartender.zip",
+  url "http://macbartender.com/B2/updates/#{version.gsub('.', '-')}/Bartender%202.zip",
       :referer => 'http://www.macbartender.com'
   name 'Bartender'
-  appcast 'http://www.macbartender.com/updates/Appcast.xml',
-          :sha256 => 'cb01076d5f91bf81f8b3074c5bc205f74b55e81ee880b756a2898057a2ffc953'
+  appcast 'http://www.macbartender.com/B2/updates/updates.php',
+          :sha256 => '4241604566ed5fd406f76c3f09eada5a313274fb3170127c5def5d15e84a42c6'
   license :commercial
 
-  app 'Bartender.app'
-  
-  container :nested => 'Bartender.zip'
+  app 'Bartender 2.app'
 
   postflight do
-    system 'tag', '-a', 'Purple', "#{staged_path}/Bartender.app"
+    system 'tag', '-a', 'Purple', "#{staged_path}/Bartender 2.app"
     system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Tools & Utilities/Bartender/"
     suppress_move_to_applications
   end
 
   zap :delete => [
                   '/Library/ScriptingAdditions/BartenderHelper.osax',
-                  '~/Library/Preferences/com.surteesstudios.Bartender.plist'
+                  '~/Library/Preferences/com.surteesstudios.Bartender.plist',
+                  '/Library/PrivilegedHelperTools/com.surteesstudios.Bartender.BartenderInstallHelper',
+                  '/System/Library/ScriptingAdditions/BartenderSystemHelper.osax'
   ]
 
   caveats <<-EOS.undent
