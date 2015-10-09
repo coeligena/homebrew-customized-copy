@@ -5,6 +5,7 @@ cask :v1 => 'coda' do
   homepage '2.5.7'
   url "http://localhost:8000/Development/Coda/Coda-#{homepage}.dmg"
   name 'Coda'
+  homepage 'https://panic.com/Coda/'
   license :commercial
   tags :vendor => 'Panic'
 
