@@ -34,8 +34,9 @@ cask :v1 => 'cleanmymac' do
     version :latest
     sha256 :no_check
 
+    homepage '3.1.1'
     # devmate.com is the official download host per the appcast feed
-    url "http://localhost:8000/Cleaners%20%26%20Maintenance/CleanMyMac%203/CleanMyMac#{homepage}.dmg"
+    url "http://localhost:8000/Cleaners%20%26%20Maintenance/CleanMyMac%203/CleanMyMac%20#{homepage}.zip"
     app 'CleanMyMac 3.app'
 
     uninstall :launchctl => "com.macpaw.CleanMyMac3.Agent"
@@ -67,6 +68,6 @@ cask :v1 => 'cleanmymac' do
   EOS
   
   name 'CleanMyMac'
-  homepage 'https://macpaw.com/cleanmymac'
+  #homepage 'https://macpaw.com/cleanmymac'
   license :commercial
 end
