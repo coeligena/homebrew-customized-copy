@@ -7,5 +7,5 @@ cask :v1 => 'istopmotion' do
   homepage 'https://www.boinx.com/istopmotion/mac/'
   license :commercial
 
-  app 'iStopMotion.app'
+  app 'iStopMotion 3.app'
 end

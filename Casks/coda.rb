@@ -1,7 +1,7 @@
 cask :v1 => 'coda' do
   version :latest
   sha256 :no_check
-  
+
   homepage '2.5.7'
   url "http://localhost:8000/Development/Coda/Coda-#{homepage}.dmg"
   name 'Coda'
@@ -20,11 +20,11 @@ cask :v1 => 'coda' do
     '~/Library/Preferences/com.panic.Coda2.LSSharedFileList.plist',
     '~/Library/Preferences/com.panic.Coda2.LSSharedFileList.plist.lockfile',
     '~/Library/Saved Application State/com.panic.Coda2.savedState'
-                 ]
+  ]
 
   depends_on :macos => '>= :lion'
 
    postflight do
      system 'tag', '-a', 'Purple', "#{staged_path}/Coda 2.app"
    end
- end
+end

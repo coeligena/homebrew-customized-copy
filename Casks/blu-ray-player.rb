@@ -5,6 +5,7 @@ cask :v1 => 'blu-ray-player' do
   homepage '2.11.0'
   url "http://localhost:8000/Media%20Players%20%26%20Tools/Blu-ray%20Player/Blu-ray%20Player%20#{homepage}%20K.dmg"
   name 'Macgo Mac Blu-ray Player'
+  #homepage 'http://www.macblurayplayer.com/'
   license :commercial
   tags :vendor => 'Macgo'
 

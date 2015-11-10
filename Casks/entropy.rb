@@ -6,6 +6,7 @@ cask :v1 => 'entropy' do
   url "http://localhost:8000/Internet%2C%20Networking%20%26%20Basic%20Tools/Entropy/Entropy-#{homepage}.zip"
   name 'Entropy'
   appcast 'http://hyperion.eigenlogik.com/appcast/feed/entropy/'
+  #homepage 'http://www.eigenlogik.com/entropy/'
   license :commercial
 
   app 'Entropy.app'

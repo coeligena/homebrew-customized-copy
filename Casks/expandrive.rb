@@ -5,7 +5,7 @@ cask :v1 => 'expandrive' do
   url "http://updates.expandrive.com/apps/expandrive/download_latest"
   name 'ExpanDrive'
   appcast 'http://updates.expandrive.com/appcast/expandrive.xml?version=3',
-          :sha256 => '5716be02c88b6c621d5219b1867b9eebd99ad21b2cbea406581523032a3fc7b3'
+          :sha256 => '5160eb9817c6059ca36f31747a2e7acc08b8f6600237dd0b1d1c598661afe8e7'
   homepage 'https://www.expandrive.com/expandrive'
   license :commercial
 

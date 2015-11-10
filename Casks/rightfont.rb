@@ -1,11 +1,11 @@
 cask :v1 => 'rightfont' do
-  version '1.2.0'
-  sha256 '345f0d7b7d8eb834fd30287d0d81b7b98759ede682c50c6c8861fd9a0c12be19'
+  version '2.2.2'
+  sha256 '94acffb9c175aec69f1c852aa7624e71dbdcd3d650755dc87572a8fb09d65534'
 
   url "http://rightfontapp.com/downloads/#{version}/rightfont.zip"
   name 'RightFont'
   appcast 'http://rightfontapp.com/update/appcast.xml',
-          :sha256 => '39d29124d62ccaeca47650ba9c47796904b16cc24047892ec4addd71faa709d0'
+          :sha256 => 'd0924090f0aabafb201065b742065fa12dbbf30f4eebe81a519fc7ae4fa45f47'
   homepage 'http://rightfontapp.com/'
   license :commercial
 

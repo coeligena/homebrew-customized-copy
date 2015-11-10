@@ -7,6 +7,7 @@ cask :v1 => 'kaleidoscope' do
   appcast 'https://updates.blackpixel.com/updates?app=ks',
           :sha256 => '0c1806533b06d08715959141f202ccf2bc30a12637dd71eef70c2552b6f18b09'
   name 'Kaleidoscope'
+  #homepage 'http://www.kaleidoscopeapp.com/'
   license :commercial
 
   app 'Kaleidoscope.app'

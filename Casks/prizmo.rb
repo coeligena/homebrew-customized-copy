@@ -10,6 +10,6 @@ cask :v1 => 'prizmo' do
   license :freemium
 
   depends_on :macos => '>= :yosemite'
-  
+
   app 'Prizmo.app'
 end

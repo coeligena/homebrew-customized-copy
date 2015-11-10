@@ -6,6 +6,7 @@ cask :v1 => 'sketch' do
   url "http://localhost:8000/Design%2C%20Photo%20%26%20Video%20Tools%20%26%20Editors/Sketch/Sketch-#{homepage}.dmg"
   appcast 'http://www.bohemiancoding.com/sketch/appcast.xml'
   name 'Sketch'
+  #homepage 'https://www.bohemiancoding.com/sketch/'
   license :commercial
 
   app 'Sketch.app'

@@ -7,7 +7,7 @@ cask :v1 => 'dnscrypt' do
   name 'DNSCrypt'
   homepage 'https://github.com/alterstep/dnscrypt-osxclient'
   license :oss
-  
+
   pkg 'DNSCrypt.pkg'
 
   uninstall :quit      => 'com.github.dnscrypt-osxclient.DNSCrypt-Menubar',

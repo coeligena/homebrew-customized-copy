@@ -7,6 +7,7 @@ cask :v1 => 'switchup' do
   appcast 'http://www.irradiatedsoftware.com/updates/profiles/switchup.php',
           :sha256 => 'a9feeb5f7dcb832042ad2d8083844e6f26c0537628820870b27e1d8a8d5abb82'
   name 'SwitchUp'
+  #homepage 'https://www.irradiatedsoftware.com/switchup/'
   license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
   app 'SwitchUp.app'

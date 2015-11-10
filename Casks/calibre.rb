@@ -3,8 +3,8 @@ cask :v1 => 'calibre' do
     version '1.48.0'
     sha256 '0533283965fbc9a6618d0b27c85bdf3671fe75ff0e89eeff406fe1457ee61b14'
   else
-    version '2.40.0'
-    sha256 '055bb9afadeed5e98e17ad8d4dc7fec0465c1d019b6573ccaf72e7eacea1c598'
+    version '2.43.0'
+    sha256 'bd7e64fccdfb83203a08f527adcf10e5334d1b02f177dfe50ead1d4afc9df34c'
     appcast 'https://github.com/kovidgoyal/calibre/releases.atom'
   end
 
@@ -34,4 +34,10 @@ cask :v1 => 'calibre' do
   binary 'calibre.app/Contents/MacOS/lrs2lrf'
   binary 'calibre.app/Contents/MacOS/markdown-calibre'
   binary 'calibre.app/Contents/MacOS/web2disk'
+
+  zap :delete => [
+                  '~/Library/Preferences/net.kovidgoyal.calibre.plist',
+                  '~/Library/Preferences/calibre',
+                  '~/Library/Caches/calibre',
+                 ]
 end

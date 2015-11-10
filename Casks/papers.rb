@@ -5,8 +5,9 @@ cask :v1 => 'papers' do
   homepage '3.2.7'
   url "http://localhost:8000/Education%2C%20Scientific%20%26%20Academic/Mekentosj%20Papers/Papers-#{homepage}.zip"
   appcast 'http://appcaster.papersapp.com/apps/mac/production/appcast.xml',
-          :sha256 => '0b58ec3ddcf8f5080a8d6e149e92a1c273e668bd4e04f7f865d4aaa6a347370a'
+          :sha256 => '681469fc04bc4690c6af360d9cc4d7af1c03626b9c26e1af105b2f4290114caf'
   name 'Papers'
+  #homepage 'http://www.papersapp.com/'
   license :commercial
 
   app 'Papers.app'

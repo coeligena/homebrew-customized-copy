@@ -7,6 +7,7 @@ cask :v1 => 'favs' do
   name 'Favs'
   appcast 'http://www.apperdeck.com/shine/appcast_favs.php',
           :sha256 => 'ee1fd47740641e80ff66fe8f6f456cc5c1a8b5202f9045f8e3ee3b023fbbc89c'
+  #homepage 'http://www.favsapp.com'
   license :commercial
 
   app 'Favs.app'

@@ -8,7 +8,8 @@ cask :v1 => 'alfred' do
   license :freemium
 
   app 'Alfred 2.app'
-  app 'Alfred 2.app/Contents/Preferences/Alfred Preferences.app'
+
+  accessibility_access true
 
   postflight do
     system 'tag', '-a', 'Purple', "#{staged_path}/Alfred 2.app"
@@ -17,7 +18,7 @@ cask :v1 => 'alfred' do
   end
 
   uninstall :quit => 'com.runningwithcrayons.Alfred-2'
-  
+
   zap :delete => [
                   '~/Library/Application Support/Alfred 2',
                   '~/Library/Caches/com.runningwithcrayons.Alfred-2',

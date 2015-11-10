@@ -1,6 +1,6 @@
 cask :v1 => 'splashtop-streamer' do
-  version '2.6.5.6'
-  sha256 '1d6bfe6f778b55157453f93a9bf58408e53476d8de4eb403bd183ecdf740cb8c'
+  version '2.6.2.7'
+  sha256 'e676b87ff0452af0b2462d911e6d03d9987ba7616e165c3adcfee14852ce4b76'
 
   # cloudfront.net is the official download host per the vendor homepage
   url "https://d17kmd0va0f0mp.cloudfront.net/mac/Splashtop_Streamer_MAC_v#{version}.dmg"

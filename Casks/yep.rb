@@ -5,6 +5,7 @@ cask :v1 => 'yep' do
   homepage '3.6.0'
   url "http://localhost:8000/Office%2C%20Productivity%20%26%20Planning/Yep/Yep%20#{homepage}.zip"
   name 'Yep'
+  #homepage 'http://www.ironicsoftware.com/yep/'
   license :commercial
 
   app 'Yep.app'

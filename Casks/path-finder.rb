@@ -5,6 +5,7 @@ cask :v1 => 'path-finder' do
   homepage '7.1.2'
   url "http://localhost:8000/Tools%20%26%20Utilities/Path%20Finder/Path%20Finder%20#{homepage}.dmg"
   name 'Path Finder'
+  #homepage 'http://www.cocoatech.com/pathfinder/'
   license :commercial
 
   app 'Path Finder.app'

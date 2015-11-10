@@ -1,5 +1,58 @@
 # CHANGELOG
 
+## 0.59.0
+
+* __Casks__
+  - 37 Casks added (192 updated) by 154 contributors since 0.58.0
+  - 2834 total Casks
+* __Features__
+  - none
+* __Breaking Changes__
+  - [#14581][] finished removing Alfred support
+* __Fixes__
+  - [#14301][] Improve Ruby version check in the formula <3 [@jgonera][]
+  - [#14730][] Remove launchjobs even if they are not loaded
+    - Use ENV['HOME'] to check existence of launchjobs
+* __Internal Changes__
+  - none
+* __Documentation__
+  - 4 doc commits since 0.58.0
+* __Contributors__
+  - 82 new contributors since 0.58.0
+  - 2383 total contributors
+* __Release Date__
+  - 2015-10-28 18:00:00 UTC
+
+
+[#14301]: https://github.com/caskroom/homebrew-cask/issues/14301
+[#14581]: https://github.com/caskroom/homebrew-cask/issues/14581
+[#14730]: https://github.com/caskroom/homebrew-cask/issues/14730
+[@jgonera]: https://github.com/jgonera
+
+## 0.58.0
+
+* __Casks__
+  - 19 Casks added
+  - 2797 total Casks
+* __Features__
+  - none
+* __Breaking Changes__
+  - none
+* __Fixes__
+  - [#14144][] updated accessibility method for el capitain compatibility <3 [@adityadalal924][]
+* __Internal Changes__
+  - none
+* __Documentation__
+  - 3 doc commits since 0.57.0
+* __Contributors__
+  - 45 new contributors since 0.57.0
+  - 2301 total contributors
+* __Release Date__
+  - 2015-10-15 01:10:00 UTC
+
+[#14144]: https://github.com/caskroom/homebrew-cask/issues/14144
+[@adityadalal924]: https://github.com/adityadalal924
+
 ## 0.57.0
 
 * __Casks__

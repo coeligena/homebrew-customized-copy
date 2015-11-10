@@ -1,6 +1,6 @@
 cask :v1 => 'daisydisk' do
   homepage '3.0.3.1'
-  
+
   if MacOS.release == :snow_leopard
     version '2.1.2'
     sha256 'd0a606dee19e524d6fa7b79fd48b3b9865123ca4126fb8805f8e96c317b57b31'
@@ -13,6 +13,7 @@ cask :v1 => 'daisydisk' do
 
   appcast 'http://www.daisydiskapp.com/downloads/appcastFeed.php'
   name 'DaisyDisk'
+  #homepage 'http://www.daisydiskapp.com'
   license :freemium
 
   app 'DaisyDisk.app'

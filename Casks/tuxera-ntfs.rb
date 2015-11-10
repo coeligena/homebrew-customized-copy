@@ -1,6 +1,6 @@
 cask :v1 => 'tuxera-ntfs' do
-  version '2015'
-  sha256 '4bed675786cbec9b8e80a0af2f12b7fda381b16978bf103458bc1011c8a24934'
+  version :latest
+  sha256 :no_check
 
   url 'https://www.tuxera.com/mac/tuxerantfs_2015.dmg'
   name 'Tuxera NTFS'
@@ -9,5 +9,8 @@ cask :v1 => 'tuxera-ntfs' do
 
   pkg '.packages/Flat/Install Tuxera NTFS.mpkg'
 
-  uninstall :script => '/System/Library/Filesystems/fusefs_txantfs.fs/Support/uninstall-package.sh'
+  uninstall :pkgutil => [
+                         'com.tuxera.pkg.Tuxera_NTFS',
+                         'com.tuxera.pkg.Tuxera_NTFS_compat'
+                        ]
 end

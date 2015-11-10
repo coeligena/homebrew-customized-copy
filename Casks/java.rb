@@ -1,6 +1,6 @@
 cask :v1 => 'java' do
-  version '1.8.0_60-b27'
-  sha256 '554f4fef08a5ea5b5b6e90cacb62a7a390d94d96c27fa2a5d6b44fc73e45465e'
+  version '1.8.0_66-b17'
+  sha256 'cd416de4f41f9f0a6984c456481437681674a717da62259740c54732f174fa08'
 
   url "http://download.oracle.com/otn-pub/java/jdk/#{version.sub(%r{^\d+\.(\d+).*?_(.*)$},'\1u\2')}/jdk-#{version.sub(%r{^\d+\.(\d+).*?_(\d+)-.*$},'\1u\2')}-macosx-x64.dmg",
       :cookies => {
@@ -52,9 +52,13 @@ cask :v1 => 'java' do
                         "/Library/Java/JavaVirtualMachines/jdk#{version.split('-')[0]}.jdk/Contents",
                         '/Library/PreferencePanes/JavaControlPanel.prefPane',
                         '/Library/Java/Home',
-                        '/usr/lib/java/libjdns_sd.jnilib',
-                        MacOS.release <= :mavericks ? '/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK' : '',
-                       ].keep_if { |v| !v.empty? }
+                        if MacOS.release <= :mavericks
+                          [
+                           '/usr/lib/java/libjdns_sd.jnilib',
+                           '/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK'
+                          ]
+                        end
+                       ].keep_if { |v| !v.nil? }
   zap       :delete => [
                         '~/Library/Application Support/Oracle/Java',
                         '~/Library/Caches/com.oracle.java.Java-Updater',

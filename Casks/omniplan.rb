@@ -5,6 +5,7 @@ cask :v1 => 'omniplan' do
   homepage '2.3.7'
   url "http://localhost:8000/Office%2C%20Productivity%20%26%20Planning/OmniPlan/OmniPlan-#{homepage}.dmg"
   name 'OmniPlan'
+  #homepage 'https://www.omnigroup.com/omniplan/'
   license :commercial
 
   app 'OmniPlan.app'

@@ -1,9 +1,9 @@
 cask :v1 => 'rdm' do
-  version '0.8.0-2540'
-  sha256 'c9b52b65e11b5a7eb240fdd5741b274cf461fc54a3e32b684e157ec713b69436'
+  version '0.8.2-2549'
+  sha256 '257e3852ab31ed2abe8f7da7bb844478bc27f32ca31bc09cce82257095d952a1'
 
   # github.com is the official download host per the vendor homepage
-  url "https://github.com/uglide/RedisDesktopManager/releases/download/#{version.sub(%r{-.*},'')}-rc4/redis-desktop-manager-#{version}.dmg"
+  url "https://github.com/uglide/RedisDesktopManager/releases/download/#{version.sub(%r{-.*},'')}/redis-desktop-manager-#{version}.dmg"
   appcast 'https://github.com/uglide/RedisDesktopManager/releases.atom'
   name 'Redis Desktop Manager'
   homepage 'http://redisdesktop.com'

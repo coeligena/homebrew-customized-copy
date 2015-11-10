@@ -39,6 +39,10 @@ cask :v1 => 'cleanmymac' do
     url "http://localhost:8000/Cleaners%20%26%20Maintenance/CleanMyMac%203/CleanMyMac%20#{homepage}.zip"
     app 'CleanMyMac 3.app'
 
+    postflight do
+      suppress_move_to_applications
+    end
+
     uninstall :launchctl => "com.macpaw.CleanMyMac3.Agent"
 
     zap :delete => [
@@ -66,7 +70,7 @@ cask :v1 => 'cleanmymac' do
   caveats <<-EOS.undent
     DO MORE...
   EOS
-  
+
   name 'CleanMyMac'
   #homepage 'https://macpaw.com/cleanmymac'
   license :commercial

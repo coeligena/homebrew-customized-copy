@@ -8,6 +8,7 @@ cask :v1 => 'ipswdownloader' do
     sha256 'ba94d309c8c52b1bf2e58e2afc18eadb1a753e39ce180a255369c13a723e6018'
     url 'http://www.igrsoft.com/wp-content/plugins/download-monitor/download.php?id=69'
   end
+
   name 'ipswDownloader'
 
   url "http://www.igrsoft.com/wp-content/plugins/download-monitor/download.php?id=65"

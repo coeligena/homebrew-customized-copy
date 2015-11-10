@@ -9,7 +9,7 @@ cask :v1 => 'appfresh' do
   license :commercial
   tags :vendor => 'metaquark'
 
-  app 'appfresh.app'
+  app 'AppFresh.app'
 
   uninstall :launchctl => 'de.metaquark.appfresh'
 
