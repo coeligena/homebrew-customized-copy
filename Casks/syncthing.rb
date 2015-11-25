@@ -1,6 +1,6 @@
 cask :v1 => 'syncthing' do
-  version '0.12.1'
-  sha256 '6ecbdd3d4eea35deaad55317ea7b86984c8d09cf6f0b2a2432cb0c53e44d5f14'
+  version '0.12.4'
+  sha256 '8417e91f363b2875ef7c3dc063087c97010d930a62fda969cbc9e02fa6d8f8f3'
 
   url "https://github.com/syncthing/syncthing/releases/download/v#{version}/syncthing-macosx-amd64-v#{version}.tar.gz"
   appcast 'https://github.com/syncthing/syncthing/releases.atom'
