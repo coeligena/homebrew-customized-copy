@@ -1,4 +1,4 @@
-cask :v1 => 'bartender' do
+cask :v1_2 => 'bartender' do
   version '2.0.7'
   sha256 'e96ee3ab2fe6bca413a16899cd1388e69a58ac00ab87e597138163d0632a1689'
 
@@ -17,6 +17,8 @@ cask :v1 => 'bartender' do
     system 'open', "#{ENV['CUSTOM_CASK_DIR']}/Tools & Utilities/Bartender/"
     suppress_move_to_applications
   end
+
+  uninstall :login_item => 'Bartender 2'
 
   zap :delete => [
                   '/Library/ScriptingAdditions/BartenderHelper.osax',
