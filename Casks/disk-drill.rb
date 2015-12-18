@@ -1,4 +1,4 @@
-cask :v1 => 'disk-drill' do
+cask 'disk-drill' do
   version :latest
   sha256 :no_check
 

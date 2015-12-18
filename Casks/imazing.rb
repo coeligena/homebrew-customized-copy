@@ -1,4 +1,4 @@
-cask :v1 => 'imazing' do
+cask 'imazing' do
   version :latest
   sha256 :no_check
 

@@ -1,4 +1,4 @@
-cask :v1 => 'kaleidoscope' do
+cask 'kaleidoscope' do
   version :latest
   sha256 :no_check
   

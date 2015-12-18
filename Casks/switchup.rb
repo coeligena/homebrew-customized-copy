@@ -1,4 +1,4 @@
-cask :v1 => 'switchup' do
+cask 'switchup' do
   version :latest
   sha256 :no_check
 

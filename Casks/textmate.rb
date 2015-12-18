@@ -1,4 +1,4 @@
-cask :v1 => 'textmate' do
+cask 'textmate' do
   version :latest
   sha256 :no_check
 

@@ -1,4 +1,4 @@
-cask :v1 => 'firefox' do
+cask 'firefox' do
   version :latest
   sha256 :no_check
 

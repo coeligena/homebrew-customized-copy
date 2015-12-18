@@ -1,4 +1,4 @@
-cask :v1 => 'growlvoice' do
+cask 'growlvoice' do
   version :latest
   sha256 :no_check
 

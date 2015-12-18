@@ -1,4 +1,4 @@
-cask :v1 => 'expandrive' do
+cask 'expandrive' do
   version :latest
   sha256 :no_check
 

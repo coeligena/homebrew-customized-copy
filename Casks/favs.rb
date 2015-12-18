@@ -1,4 +1,4 @@
-cask :v1 => 'favs' do
+cask 'favs' do
   version :latest
   sha256 :no_check
 
