@@ -2,12 +2,11 @@ cask 'firefox' do
   version :latest
   sha256 :no_check
 
-  url "https://download.mozilla.org/?product=firefox-latest&os=osx&lang=en-US"
+  url "https://download.mozilla.org/?product=firefox-latest&lang=en-US&os=osx"
   name 'Firefox'
   name 'Mozilla Firefox'
   homepage 'https://www.mozilla.org/en-US/firefox/'
   license :mpl
-  tags :vendor => 'Mozilla'
 
   app 'Firefox.app'
 
