@@ -11,7 +11,8 @@ cask 'daisydisk' do
     url "http://localhost:8000/Cleaners%20%26%20Maintenance/DaisyDisk/DaisyDisk%20#{homepage}.zip"
   end
 
-  appcast 'http://www.daisydiskapp.com/downloads/appcastFeed.php'
+  appcast 'http://www.daisydiskapp.com/downloads/appcastFeed.php',
+          :sha256 => '622ac0e225a09a7a40476f014aa9ea53adc483546d73e942729d86b2c9cc0907'
   name 'DaisyDisk'
   #homepage 'http://www.daisydiskapp.com'
   license :freemium

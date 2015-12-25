@@ -8,7 +8,8 @@ cask 'evernote' do
     version :latest
     sha256 :no_check
     url "https://evernote.com/download/get.php?file=EvernoteMac"
-    appcast 'https://update.evernote.com/public/ENMac/EvernoteMacUpdate.xml'
+    appcast 'https://update.evernote.com/public/ENMac/EvernoteMacUpdate.xml',
+            :sha256 => 'f8c24274d07b0205e8344d33aec11e7a08d63df27614802836d292cad65c76d5'
   end
 
   name 'Evernote'

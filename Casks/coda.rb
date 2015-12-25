@@ -1,4 +1,4 @@
-cask :v1 => 'coda' do
+cask 'coda' do
   version :latest
   sha256 :no_check
 
@@ -7,7 +7,6 @@ cask :v1 => 'coda' do
   name 'Coda'
   homepage 'https://panic.com/Coda/'
   license :commercial
-  tags :vendor => 'Panic'
 
   app 'Coda 2.app'
 
