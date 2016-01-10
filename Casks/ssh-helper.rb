@@ -1,4 +1,4 @@
-cask :v1 => 'ssh-helper' do
+cask 'ssh-helper' do
   version :latest
   sha256 :no_check
 

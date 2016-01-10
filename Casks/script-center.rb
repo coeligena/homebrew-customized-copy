@@ -1,4 +1,4 @@
-cask :v1 => 'script-center' do
+cask 'script-center' do
   version :latest
   sha256 :no_check
 

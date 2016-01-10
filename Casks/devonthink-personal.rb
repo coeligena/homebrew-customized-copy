@@ -1,4 +1,4 @@
-cask :v1 => 'devonthink-personal' do
+cask 'devonthink-personal' do
     version '2.8.4'
     sha256 'd17884f211aa4129dcf95c75f1c5f306ff405fda560dad0af991880b96edccbd'
 

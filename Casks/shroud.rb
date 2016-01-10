@@ -1,4 +1,4 @@
-cask :v1 => 'shroud' do
+cask 'shroud' do
   version '1.2'
   sha256 'fb1fc2cad188131714ea3505fa65f20f8d79da758dc86b2dc2ed9073648900af'
 

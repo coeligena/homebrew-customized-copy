@@ -1,4 +1,4 @@
-cask :v1 => 'dbvisualizer-tgz' do
+cask 'dbvisualizer-tgz' do
   version '9.2.10'
   sha256 '907f2b89639147986bb3c8b568defc514c762420cae6633bb358dc6cb1925c41'
 

@@ -1,4 +1,4 @@
-cask :v1 => 'quicklookchm' do
+cask 'quicklookchm' do
   version '1.1'
   sha256 'ed0d675a37038e6e393f556ee4811c9b4dcd66d6ffbceaa74c2d60630372ec5f'
 

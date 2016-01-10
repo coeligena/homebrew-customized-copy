@@ -1,4 +1,4 @@
-cask :v1 => 'duplicatewindows' do
+cask 'duplicatewindows' do
   version '0.3.4'
   sha256 'c0dc5997637fa515ba14c23ac3da51b5ac18d0c6ba0c82722d2f039d4149a357'
 

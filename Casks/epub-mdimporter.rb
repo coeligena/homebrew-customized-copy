@@ -1,4 +1,4 @@
-cask :v1 => 'epub-mdimporter' do
+cask 'epub-mdimporter' do
   version '1.6'
   sha256 '75a501339f6dc2f8a36efea652c4b7a6e5fd7ceedc36fe50cddb5d5379d7af76'
 

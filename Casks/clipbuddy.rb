@@ -1,4 +1,4 @@
-cask :v1 => 'clipbuddy' do
+cask 'clipbuddy' do
   version :latest
   sha256 :no_check
 

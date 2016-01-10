@@ -1,4 +1,4 @@
-cask :v1 => 'flash-ppapi' do
+cask 'flash-ppapi' do
   version '20.0.0.267'
   sha256 '6937407ff9200c2aaef4c23a299d6b6b9f66c4e85785f4e13bfbf4342f634c4d'
 
@@ -7,7 +7,6 @@ cask :v1 => 'flash-ppapi' do
   name 'Adobe Flash Player'
   homepage 'https://www.adobe.com/products/flashplayer/distribution3.html'
   license :gratis
-  tags :vendor => 'Adobe'
 
   installer :manual => 'Install Adobe Pepper Flash Player.app'
 

@@ -1,4 +1,4 @@
-cask :v1 => 'java7-jce-strong-policy' do
+cask 'java7-jce-strong-policy' do
   version :latest
   sha256 :no_check
   

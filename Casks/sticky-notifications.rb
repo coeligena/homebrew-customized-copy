@@ -1,4 +1,4 @@
-cask :v1 => 'sticky-notifications' do
+cask 'sticky-notifications' do
   version '1.0.5'
   sha256 '6758b6c431990b5a72d66650d9323a31c51e9063a0e1cc2f317ce52adc8f0fe9'
 

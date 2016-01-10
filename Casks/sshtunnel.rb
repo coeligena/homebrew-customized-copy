@@ -1,4 +1,4 @@
-cask :v1 => 'sshtunnel' do
+cask 'sshtunnel' do
   version :latest
   sha256 :no_check
 

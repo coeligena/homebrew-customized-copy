@@ -1,4 +1,4 @@
-cask :v1 => 'hwsensors' do
+cask 'hwsensors' do
   version '6.18.1394'
   sha256 'ac8026b46cfd23ae0365eb7accc149b6b7745b638524a2862f1ad26b51b7e958'
   

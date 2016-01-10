@@ -1,4 +1,4 @@
-cask :v1 => 'tagbak' do
+cask 'tagbak' do
   version :latest
   sha256 :no_check
 

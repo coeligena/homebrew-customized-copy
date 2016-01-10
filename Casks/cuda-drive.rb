@@ -1,4 +1,4 @@
-cask :v1 => 'cuda-drive' do
+cask 'cuda-drive' do
   version :latest
   sha256 :no_check
 

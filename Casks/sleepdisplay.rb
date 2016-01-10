@@ -1,4 +1,4 @@
-cask :v1 => 'sleepdisplay' do
+cask 'sleepdisplay' do
   version '2.8'
   sha256 'cc7ca9c4ad6a074d28ae320e6a4a59ee0a42e23ed02dff0f2944a4aaeb1d89e0'
 

@@ -1,4 +1,4 @@
-cask :v1 => 'igadget-manager' do
+cask 'igadget-manager' do
   version :latest
   sha256 :no_check
 
