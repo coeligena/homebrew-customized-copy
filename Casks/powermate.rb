@@ -1,10 +1,10 @@
 cask 'powermate' do
-  version '1.2.4_0'
+  version '1.2.4,3/2015/08'
   sha256 '6fd755961bb5a486cb3ab9d47217f7877d4bb021134f32a3c32ceede3fd3cf3d'
 
-  url "http://support.griffintechnology.com/sites/default/files/PowerMate_v#{version}.zip"
+  url "https://support.griffintechnology.com/wp-content/uploads/sites/#{version.after_comma}/PowerMate_v#{version.before_comma}.zip"
   name 'Griffin Powermate'
-  homepage 'http://support.griffintechnology.com/support/powermate/'
+  homepage 'https://support.griffintechnology.com/support/powermate/'
   license :gratis
 
   app 'PowerMate.app'

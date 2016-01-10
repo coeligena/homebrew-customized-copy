@@ -4,7 +4,7 @@ cask 'qqmusic' do
 
   url "http://dldir1.qq.com/music/clntupate/mac/QQMusic#{version}.dmg"
   name 'QQ音乐'
-  homepage 'http://y.qq.com'
+  homepage 'https://y.qq.com'
   license :commercial
 
   app 'QQMusic.app'
@@ -12,9 +12,9 @@ cask 'qqmusic' do
   uninstall :quit => 'com.tencent.QQMusicMac'
 
   zap :delete => [
-                  '~/Library/Caches/com.tencent.QQMusicMac',
-                  '~/Library/Application Support/com.tencent.QQMusicMac',
-                  '~/Library/Preferences/com.tencent.QQMusicMac.plist',
-                  '~/Library/Saved Application State/com.tencent.QQMusicMac.savedState'
+                   '~/Library/Caches/com.tencent.QQMusicMac',
+                   '~/Library/Application Support/com.tencent.QQMusicMac',
+                   '~/Library/Preferences/com.tencent.QQMusicMac.plist',
+                   '~/Library/Saved Application State/com.tencent.QQMusicMac.savedState',
                  ]
 end

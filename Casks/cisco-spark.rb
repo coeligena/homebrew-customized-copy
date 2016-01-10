@@ -4,7 +4,7 @@ cask 'cisco-spark' do
 
   url 'https://download.ciscospark.com/mac/Spark.dmg'
   name 'Cisco Systems Spark'
-  homepage 'http://www.webex.com/projectsquared/'
+  homepage 'https://www.webex.com/projectsquared/'
   license :gratis
 
   depends_on :macos => '>= :mavericks'
@@ -12,11 +12,12 @@ cask 'cisco-spark' do
   app 'Spark.app'
 
   uninstall :signal => [
-                        ['TERM', 'Cisco-Systems.Spark']
+                         ['TERM', 'Cisco-Systems.Spark']
                        ]
+
   zap :delete => [
                    '~/Library/Preferences/Cisco-Systems.Spark.plist',
                    '~/Library/Caches/Cisco-Systems.Spark',
                    '~/Library/Logs/Spark',
-                  ]
+                 ]
 end

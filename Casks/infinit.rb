@@ -4,15 +4,15 @@ cask 'infinit' do
 
   url 'https://download.infinit.io/macosx/app/Infinit.dmg'
   name 'Infinit'
-  homepage 'http://www.infinit.io/'
+  homepage 'https://www.infinit.io/'
   license :gratis
 
   app 'Infinit.app'
 
   zap :delete => [
-                  '~/Library/Application Support/Infinit',
-                  '~/Library/Application Support/InfinitApplication',
-                  '~/Library/Caches/io.infinit.InfinitApplication',
-                  '~/Library/Preferences/io.infinit.InfinitApplication.plist',
+                   '~/Library/Application Support/Infinit',
+                   '~/Library/Application Support/InfinitApplication',
+                   '~/Library/Caches/io.infinit.InfinitApplication',
+                   '~/Library/Preferences/io.infinit.InfinitApplication.plist',
                  ]
 end

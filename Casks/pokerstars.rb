@@ -7,10 +7,12 @@ cask 'pokerstars' do
   homepage 'https://www.pokerstars.com/'
   license :freemium
 
+  auto_updates true
+
   app 'PokerStars.app'
 
   zap :delete => [
-                  '~/Library/Preferences/com.pokerstars.user.ini',
-                  '~/Library/Preferences/com.pokerstars.PokerStars.plist',
+                   '~/Library/Preferences/com.pokerstars.user.ini',
+                   '~/Library/Preferences/com.pokerstars.PokerStars.plist',
                  ]
 end

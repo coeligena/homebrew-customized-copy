@@ -3,9 +3,9 @@ cask 'hype' do
   sha256 :no_check
 
   url "https://tumult.com/hype/download/Hype.zip"
-  name 'Hype'
   appcast 'https://tumult.com/hype/appcast_hype2.xml',
           :sha256 => '07aef09835937ee8af2d7938f30d9871faa6f935b36bc93850e021e32ebf6717'
+  name 'Tumult Hype'
   homepage 'https://tumult.com/hype/'
   license :commercial
 

@@ -4,16 +4,16 @@ cask 'wacom-bamboo-tablet' do
 
   url "http://cdn.wacom.com/u/productsupport/drivers/mac/consumer/pentablet_#{version}.dmg"
   name 'Wacom Bamboo Tablet'
-  homepage 'http://us.wacom.com/en/support/drivers'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  homepage 'https://us.wacom.com/en/support/drivers'
+  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
   pkg 'Install Wacom Tablet.pkg'
 
   uninstall :launchctl => 'com.wacom.pentablet',
-    :quit => [
-      'com.wacom.TabletDriver',
-      'com.wacom.PenTabletDriver',
-      'com.wacom.ConsumerTouchDriver'
-    ],
-    :pkgutil => 'com.wacom.installpentablet'
+            :quit      => [
+                            'com.wacom.TabletDriver',
+                            'com.wacom.PenTabletDriver',
+                            'com.wacom.ConsumerTouchDriver',
+                          ],
+            :pkgutil   => 'com.wacom.installpentablet'
 end

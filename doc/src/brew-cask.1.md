@@ -1,4 +1,4 @@
-homebrew-cask(1) — A friendly binary installer for OS X
+homebrew-cask(1) - A friendly binary installer for OS X
 ========================================================
 
 ## SYNOPSIS
@@ -57,8 +57,9 @@ names, and other aspects of this manual are still subject to change.
     Open the given Cask definition file for editing.
 
   * `fetch` [--force] <token> [ <token> ... ]:
-    Fetch remote resources for the given Cask to the local cache. With
-    `--force`, force re-download even if the resources are already cached.
+    Download remote application files for the given Cask to the local
+    cache. With `--force`, force re-download even if the files are already
+    cached.
 
   * `home` or `homepage` [<token>]:
     Display the homepage associated with a given Cask in a browser.
@@ -123,7 +124,7 @@ names, and other aspects of this manual are still subject to change.
     files. `zap` actions are variable, depending on the level of detail
     defined by the Cask author.
 
-    **`zap` may remove resources which are shared between applications.**
+    **`zap` may remove files which are shared between applications.**
 
 ## OPTIONS
 
@@ -189,10 +190,12 @@ in a future version.
 Homebrew-cask is implemented as a external command for Homebrew. That means
 this project is entirely built upon the Homebrew infrastructure. For
 example, upgrades to the Homebrew-cask tool are received through Homebrew:
-    `brew update; brew cleanup; brew cask cleanup`
+
+    brew update; brew cleanup; brew cask cleanup
 
 And updates to individual Cask definitions are received whenever you issue
 the Homebrew command:
+
     brew update
 
 ## OTHER WAYS TO SPECIFY A CASK

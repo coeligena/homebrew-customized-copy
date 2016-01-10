@@ -7,7 +7,7 @@ cask 'mpv' do
   appcast 'https://github.com/mpv-player/mpv/releases.atom',
           :sha256 => '36931e63138ed1389a1f3f9d64fe074a8eb70e273eff849f025e2bddf648e3f7'
   name 'mpv'
-  homepage 'http://mpv.io/'
+  homepage 'https://mpv.io/'
   license :gpl
 
   app 'mpv.app'
@@ -20,18 +20,18 @@ cask 'mpv' do
   end
 
   zap :delete => [
-                  '~/.mpv/channels.conf',
-                  '~/.mpv/config',
-                  '~/.mpv/input.conf',
-                  '~/.mpv/fonts.conf',
-                  '~/.config/mpv/channels.conf',
-                  '~/.config/mpv/mpv.conf',
-                  '~/.config/mpv/input.conf',
-                  '~/.config/mpv/fonts.conf',
+                   '~/.mpv/channels.conf',
+                   '~/.mpv/config',
+                   '~/.mpv/input.conf',
+                   '~/.mpv/fonts.conf',
+                   '~/.config/mpv/channels.conf',
+                   '~/.config/mpv/mpv.conf',
+                   '~/.config/mpv/input.conf',
+                   '~/.config/mpv/fonts.conf',
                  ],
       :rmdir  => [
-                  '~/.mpv',
-                  '~/.config/mpv'
+                   '~/.mpv',
+                   '~/.config/mpv',
                  ]
 
   caveats do

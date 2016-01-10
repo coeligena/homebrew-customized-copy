@@ -1,15 +1,16 @@
 cask 'alfred' do
-  version '2.8.1_425'
-  sha256 'ed112b6c72701b4b58e3a431d49e4b5139940ed6438ed3fd413f2c9eac693a6b'
+  version '2.8.2_431'
+  sha256 'efff18c2459fa11be096934b4f00526d717df79687153ca246ac93fadd90daa3'
 
   url "https://cachefly.alfredapp.com/Alfred_#{version}.zip"
   name 'Alfred'
-  homepage 'http://www.alfredapp.com/'
+  homepage 'https://www.alfredapp.com/'
   license :freemium
 
-  app 'Alfred 2.app'
-
+  auto_updates true
   accessibility_access true
+
+  app 'Alfred 2.app'
 
   postflight do
     system 'tag', '-a', 'Purple', "#{staged_path}/Alfred 2.app"
@@ -17,16 +18,16 @@ cask 'alfred' do
     suppress_move_to_applications :key => 'suppressMoveToApplications'
   end
 
-  uninstall :quit => 'com.runningwithcrayons.Alfred-2',
+  uninstall :quit       => 'com.runningwithcrayons.Alfred-2',
             :login_item => 'Alfred 2'
 
   zap :delete => [
-                  '~/Library/Application Support/Alfred 2',
-                  '~/Library/Caches/com.runningwithcrayons.Alfred-2',
-                  '~/Library/Caches/com.runningwithcrayons.Alfred-Preferences',
-                  '~/Library/Preferences/com.runningwithcrayons.Alfred-2.plist',
-                  '~/Library/Preferences/com.runningwithcrayons.Alfred-Preferences.plist',
-                  '~/Library/Saved Application State/com.runningwithcrayons.Alfred-Preferences.savedState'
+                   '~/Library/Application Support/Alfred 2',
+                   '~/Library/Caches/com.runningwithcrayons.Alfred-2',
+                   '~/Library/Caches/com.runningwithcrayons.Alfred-Preferences',
+                   '~/Library/Preferences/com.runningwithcrayons.Alfred-2.plist',
+                   '~/Library/Preferences/com.runningwithcrayons.Alfred-Preferences.plist',
+                   '~/Library/Saved Application State/com.runningwithcrayons.Alfred-Preferences.savedState',
                  ]
 
   caveats <<-EOS.undent

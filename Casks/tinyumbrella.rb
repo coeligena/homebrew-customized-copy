@@ -4,8 +4,8 @@ cask 'tinyumbrella' do
 
   url 'https://blog.firmwareumbrella.com/download/343/'
   name 'TinyUmbrella'
-  homepage 'http://blog.firmwareumbrella.com/'
-  license :unknown    # todo: change license and remove this comment; ':unknown' is a machine-generated placeholder
+  homepage 'https://blog.firmwareumbrella.com/'
+  license :unknown # TODO: change license and remove this comment; ':unknown' is a machine-generated placeholder
 
   app 'TinyUmbrella.app'
 end

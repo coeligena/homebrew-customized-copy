@@ -4,12 +4,12 @@ cask 'paragon-vmdk-mounter' do
 
   url 'http://dl.paragon-software.com/free/VMDK_MOUNTER_2014.dmg'
   name 'Paragon VMDK Mounter'
-  homepage 'http://www.paragon-software.com/home/vd-mounter-mac-free/'
+  homepage 'https://www.paragon-software.com/home/vd-mounter-mac-free/'
   license :freemium
 
   pkg 'Paragon VMDK Mounter.pkg'
 
   uninstall :launchctl => 'com.paragon-software.vdmounter',
-            :kext => 'com.paragon-software.kext.VDMounter',
-            :pkgutil => 'com.paragon-software.VDMounter.pkg'
+            :kext      => 'com.paragon-software.kext.VDMounter',
+            :pkgutil   => 'com.paragon-software.VDMounter.pkg'
 end

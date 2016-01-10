@@ -1,4 +1,4 @@
-cask :v1 => 'charles' do
+cask 'charles' do
   version :latest
   sha256 :no_check
 
@@ -6,14 +6,14 @@ cask :v1 => 'charles' do
   homepage '3.9.2'
   url "http://localhost:8000/Development/Charles%20Proxy/charles-proxy-#{homepage}-openjdk.dmg"
   name 'Charles'
-  homepage 'http://www.charlesproxy.com/'
+  homepage 'https://www.charlesproxy.com/'
   license :commercial
 
   app 'Charles.app'
 
   zap :delete => [
-                  '~/Library/Application Support/Charles',
-                  '~/Library/Preferences/com.xk72.charles.config',
+                   '~/Library/Application Support/Charles',
+                   '~/Library/Preferences/com.xk72.charles.config',
                  ]
   
   postflight do

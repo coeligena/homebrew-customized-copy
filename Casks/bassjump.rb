@@ -5,7 +5,6 @@ cask 'bassjump' do
 
     # rackcdn.com is the official download host per the vendor homepage
     url "http://ffe82a399885f9f28605-66638985576304cbe11c530b9b932f18.r24.cf2.rackcdn.com/BassJumpSoundSystem-#{version}-249-ML.mpkg.zip"
-    name 'BassJump'
 
     pkg "BassJump Sound System-#{version}-249-ML.mpkg"
   else
@@ -19,15 +18,16 @@ cask 'bassjump' do
     pkg 'BassJumpInstaller.pkg'
   end
 
+  name 'BassJump'
   homepage 'https://www.twelvesouth.com/product/bassjump-2-for-macbook'
   license :gratis
 
   uninstall :pkgutil => [
-                         'com.twelvesouth.bassjump.installer.halplugin',
-                         'com.twelvesouth.bassjump.installer.overridekext',
-                         'com.twelvesouth.bassjump.installer.prefpane',
+                          'com.twelvesouth.bassjump.installer.halplugin',
+                          'com.twelvesouth.bassjump.installer.overridekext',
+                          'com.twelvesouth.bassjump.installer.prefpane',
                         ],
-            :kext => 'com.twelvesouth.driver.BassJumpOverrideDriver'
+            :kext    => 'com.twelvesouth.driver.BassJumpOverrideDriver'
 
   caveats do
     reboot

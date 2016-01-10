@@ -96,11 +96,12 @@ cask 'adobe-reader' do
   end
   
   uninstall :pkgutil => 'com.adobe.acrobat.DC.reader.*',
-            :delete => '/Applications/Adobe Acrobat Reader DC.app'
+            :delete  => '/Applications/Adobe Acrobat Reader DC.app'
+
   zap       :delete => [
-                        '~/Library/Application Support/Adobe/Acrobat/DC',
-                        '~/Library/Preferences/Adobe/Acrobat/DC',
-                        '~/Library/Preferences/com.adobe.Reader.plist',
-                        '~/Library/Caches/com.adobe.Reader'
+                         '~/Library/Application Support/Adobe/Acrobat/DC',
+                         '~/Library/Preferences/Adobe/Acrobat/DC',
+                         '~/Library/Preferences/com.adobe.Reader.plist',
+                         '~/Library/Caches/com.adobe.Reader',
                        ]
 end

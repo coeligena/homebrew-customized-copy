@@ -39,7 +39,7 @@ cask 'alfred' do
 
   url "https://cachefly.alfredapp.com/Alfred_#{version}.zip"
   name 'Alfred'
-  homepage 'http://www.alfredapp.com/'
+  homepage 'https://www.alfredapp.com/'
   license :freemium
 
   app 'Alfred 2.app'
@@ -68,6 +68,7 @@ Each of the following stanzas is required for every Cask.
 | `version`          | no                            | application version; give value of `:latest`  if versioned downloads are not offered
 | `sha256`           | no                            | SHA-256 checksum of the file downloaded from `url`, calculated by the command `shasum -a 256 <file>`. Can be suppressed by using the special value `:no_check`. (see also [Checksum Stanza Details](#checksum-stanza-details))
 | `url`              | no                            | URL to the `.dmg`/`.zip`/`.tgz`/`.tbz2` file that contains the application. A [comment](#when-url-and-homepage-hostnames-differ-add-a-comment) should be added if the hostnames in the `url` and `homepage` stanzas differ (see also [URL Stanza Details](#url-stanza-details))
+| `name`             | yes                           | a string providing the full and proper name defined by the vendor (see also [Name Stanza Details](#name-stanza-details))
 | `homepage`         | no                            | application homepage; used for the `brew cask home` command
 | `license`          | no                            | a symbol identifying the license category for the application. (see also [License Stanza Details](#license-stanza-details))
 
@@ -99,7 +100,6 @@ Each Cask must declare one or more *artifacts* (i.e. something to install)
 
 | name                   | multiple occurrences allowed? | value       |
 | ---------------------- |------------------------------ | ----------- |
-| `name`                 | yes                           | a string providing the full and proper name defined by the vendor (see also [Name Stanza Details](#name-stanza-details))
 | `uninstall`            | yes                           | procedures to uninstall a Cask. Optional unless the `pkg` stanza is used. (see also [Uninstall Stanza Details](#uninstall-stanza-details))
 | `zap`                  | yes                           | additional procedures for a more complete uninstall, including user files and shared resources. (see also [Zap Stanza Details](#zap-stanza-details))
 | `appcast`              | no                            | a URL providing an appcast feed to find updates for this Cask. (see also [Appcast Stanza Details](#appcast-stanza-details))
@@ -183,6 +183,8 @@ Its first instance should use the latin alphabet, include the software vendor’
 
 A good example is [`pycharm-ce`](https://github.com/caskroom/homebrew-cask/blob/fc05c0353aebb28e40db72faba04b82ca832d11a/Casks/pycharm-ce.rb#L6#L7). `Jetbrains PyCharm Community Edition` makes sense even though it is likely never referenced as such anywhere, but `Jetbrains PyCharm Community Edition CE` doesn’t, hence why it has a second line. Another example are casks whose original names do not use the latin alphabet, like [`cave-story`](https://github.com/caskroom/homebrew-cask/blob/0fe48607f5656e4f1de58c6884945378b7e6f960/Casks/cave-story.rb#L7#L9).
 
+Note that `brew cask search` and `brew cask list` are not yet capable of using the information stored in the `name` stanza.
+
 ## Caveats Stanza Details
 
 ### Caveats as a String
@@ -217,10 +219,11 @@ The following methods may be called to generate standard warning messages:
 | --------------------------------- | ----------- |
 | `path_environment_variable(path)` | users should make sure `path` is in their `$PATH` environment variable
 | `zsh_path_helper(path)`           | zsh users must take additional steps to make sure `path` is in their `$PATH` environment variable
+| `depends_on_java(version)`        | users should make sure they have the specified version of java installed. `version` can be exact (e.g. `6`), a minimum (e.g. `7+`), or omitted (when any version works).
 | `logout`                          | users should log out and log back in to complete installation
 | `reboot`                          | users should reboot to complete installation
 | `files_in_usr_local`              | the Cask installs files to `/usr/local`, which may confuse Homebrew
-| `discontinued`                    | software has been officially discontinued upstream
+| `discontinued`                    | all software development has been officially discontinued upstream
 | `free_license(web_page)`          | users may get an official license to use the software at `web_page`
 
 Example:
@@ -303,15 +306,15 @@ In rare cases, a distribution may not be available over ordinary HTTP/S. Subvers
 
 ## Appcast Stanza Details
 
-The value of the `appcast` stanza is a string, holding the URL for an appcast which provides information on future updates. Generally, the appcast URL returns Sparkle-compatible XML, though that is not required.
+The value of the `appcast` stanza is a string, holding the URL for an appcast which provides information on future updates.
 
-Example: [adium.rb](../../d7f8eafa4fc01a6c383925d9962b5da33876a8b6/Casks/adium.rb#L6)
-
-### Additional Appcast Parameters
+### Required Appcast Parameters
 
 | key                | value       |
 | ------------------ | ----------- |
 | `:sha256`          | a string holding the SHA-256 checksum of the most recent appcast which matches the current Cask versioning
+
+Example: [atom.rb](../../127387b9fc686370ffa92c01eeed8979df9e1621/Casks/atom.rb#L7#L8)
 
 ## License Stanza Details
 
@@ -831,7 +834,7 @@ The following methods may be called to perform standard tasks:
 
 ### Zap Stanza Purpose
 
-The `zap` stanza describes a more complete uninstallation of resources associated with a Cask. The `zap` procedures will never be performed by default, but only if the user invokes the `zap` verb:
+The `zap` stanza describes a more complete uninstallation of files associated with a Cask. The `zap` procedures will never be performed by default, but only if the user invokes the `zap` verb:
 
 ```bash
 $ brew cask zap td-toolbelt             # also removes org.ruby-lang.installer
