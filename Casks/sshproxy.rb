@@ -1,4 +1,4 @@
-cask :v1 => 'sshproxy' do
+cask 'sshproxy' do
   version :latest
   sha256 :no_check
 

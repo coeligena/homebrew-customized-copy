@@ -1,4 +1,4 @@
-cask :v1 => 'ialertu' do
+cask 'ialertu' do
   version :latest
   sha256 :no_check
 
